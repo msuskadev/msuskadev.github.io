@@ -26,7 +26,7 @@
 			<div class="slides">
 				<section>
 					<h1>The thin line between love and hate...</h1>
-					<h2>An approach of automation testing</h2>
+					<h2>An approach of Test Automation</h2>
 				</section>
 				<section>		
 					<h2>Who will talk to you?</h2>					
@@ -128,6 +128,37 @@
 				<section data-transition="zoom">
 					<h1>Hate</h1>					
 				</section>
+				<section data-transition="convex">
+					<h2>Real Test Automation</h2>
+					<img src="/img/real_test_automation.png" style="background-color: transparent; border:none; width: 1000px">						
+				</section>
+				<section>
+					<section data-transition="zoom">
+						<h1>CLIENT</h1>
+						<img src="/img/manager.png" style="background-color: transparent; border:none; width: 400px">		
+						https://www.joecolantonio.com/2017/03/02/automation-testing/
+						roi
+						kick off all Testers
+						automation will find all bugs
+						Automated testing can completely replace manual testing
+						Automated tests can test everything.
+						Failing automated tests indicate all bugs in the code.
+
+						musi zrozumiec ze 				
+					</section>
+					<section>
+						<canvas data-chart="pie">
+							,Black, Red, Green, Yellow
+							My first dataset, 40, 40, 20, 6
+						</canvas>			
+					</section>
+					<section>
+						<canvas data-chart="pie">
+							,sss, dddd,fff, eeee
+							My first dataset, 34, 33, 333, 3
+						</canvas>			
+					</section>
+				</section>
 				<section data-background="#fff">
 					<img src="/img/lokowanie.png" style="border: 0px;">
 				</section>
@@ -150,11 +181,37 @@
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
+					{ src: 'plugin/chart/Chart.min.js' },				
+					{ src: 'plugin/chart/csv2chart.js' },
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
+				],
+
+				chart: {
+					defaults: { 
+						global: { 
+							title: { 
+								fontColor: "#FFF" }, 
+							legend: {
+								position: "bottom",
+								labels: { fontColor: "#FFF" },
+							},
+							tooltips: {
+								labels: { fontColor: "#FFF" },
+							},
+						}, 	
+						options : {
+							responsive: true,
+							animation:{
+            					animateScale:true
+							}
+						}
+					},
+					
+					pie: { backgroundColor: [ ["rgba(0,0,0,1)" , "rgba(220,20,20,1)", "rgba(20,220,20,1)", "rgba(220,220,20,1)", "rgba(20,20,220,1)"] ]},
+				}
 			});
 		</script>
 	</body>
