@@ -130,32 +130,58 @@
 				</section>
 				<section data-transition="convex">
 					<h2>Real Test Automation</h2>
-					<img src="/img/real_test_automation.png" style="background-color: transparent; border:none; width: 1000px">						
+					<div style="position: relative; width: 1000px;">
+						<img src="/img/real_test_automation.png" style="background-color: transparent; border:none; width: 1000px; position: relative; margin-top: 0; margin-left: 0;">
+						<span class="fragment fade-in slide-out" style="z-index: 100; position: absolute;left: 170px; top: 30px; font-size: 20px; text-align: left;">Outdated test cases<br>Tests not ready for automation</span>
+						<span class="fragment fade-in slide-out" style="z-index: 100; position: absolute;left: -220px; top: 205px; font-size: 20px; text-align: left;">No proper test data<br>No test data strategy in place<br>Hard coding test data</span>
+						<span class="fragment fade-in slide-out" style="z-index: 100; position: absolute;left: 180px; top: 420px; font-size: 20px; text-align: left;">Bugs in application<br>Developers not making their code automatable<br>Application not developed to be testable</span>
+						<span class="fragment fade-in slide-out" style="z-index: 100; position: absolute;right: 0px; top: 120px; font-size: 20px; text-align: left;">Setting unrealistic goals</span>		
+						<span class="fragment fade-in slide-out" style="z-index: 100; position: absolute;right: -200px; top: 420px; font-size: 20px; text-align: left;">No stable test environment<br>Not having a controlled test environment</span>		
+					</div>
 				</section>
 				<section>
 					<section data-transition="zoom">
 						<h1>CLIENT</h1>
-						<img src="/img/manager.png" style="background-color: transparent; border:none; width: 400px">		
-						https://www.joecolantonio.com/2017/03/02/automation-testing/
-						roi
-						kick off all Testers
-						automation will find all bugs
-						Automated testing can completely replace manual testing
-						Automated tests can test everything.
-						Failing automated tests indicate all bugs in the code.
-
-						musi zrozumiec ze 				
+						<img src="/img/manager.png" style="background-color: transparent; border:none; width: 400px">									
 					</section>
 					<section>
-						<canvas data-chart="pie">
-							,Black, Red, Green, Yellow
-							My first dataset, 40, 40, 20, 6
+						<h1>Silver Bullet Syndrome</h1>
+					</section>
+					<section>
+						<h3>Myth 1</h3>
+						<h2>Automated testing can completely replace manual testing or<br>human testers</h2>
+					</section>
+					<section data-background="#fff" data-background-transition="zoom">
+						<h3>Effectiveness in finding bugs</h3>
+						<canvas data-chart="bar">
+							,Automated tests, Exploratory tests, Manual tests, Fix verification
+							Dataset, 9.3, 58.2, 24, 8.4
 						</canvas>			
 					</section>
 					<section>
-						<canvas data-chart="pie">
-							,sss, dddd,fff, eeee
-							My first dataset, 34, 33, 333, 3
+						<h3>Myth 2</h3>
+						<h2>Automated tests can test everything</h2>
+					</section>
+					<section data-background="#fff" data-background-transition="zoom">
+						<h2>Tests not worth automating</h2>
+						<h3 class="fragment fade-in slide-out" style="color: rgb(56,132,153)">CAPTCHA</h3>
+						<h3 class="fragment fade-in slide-out" style="color: rgb(56,132,153)">One time test</h3>
+						<h3 class="fragment fade-in slide-out" style="color: rgb(56,132,153)">Test that don't have predictable results</h3>
+						<h3 class="fragment fade-in slide-out" style="color: rgb(56,132,153)">Usability testing</h3>
+					</section>
+					<section>
+						<h3>Myth 3</h3>
+						<h2>Failing automated tests indicate all bugs in the code</h2>
+					</section>
+					<section>
+						<h3>Myth 4</h3>
+						<h2>Quick ROI</h2>
+					</section>
+					<section data-background="#fff" data-background-transition="zoom">
+						<h3>Return on Investment</h3>
+						<canvas data-chart="bar">
+							,Immediately, 0-6 months, 6-12 months, 1+ years, Never
+							Dataset, 24, 24, 28, 15, 9
 						</canvas>			
 					</section>
 				</section>
@@ -191,12 +217,15 @@
 
 				chart: {
 					defaults: { 
-						global: { 
+						global: { 							
 							title: { 
 								fontColor: "#FFF" }, 
 							legend: {
-								position: "bottom",
-								labels: { fontColor: "#FFF" },
+								display: false,
+								position: "right",
+								labels: { fontColor: "#FFF",
+										  fontSize: 20,
+										  fontStyle: "bold" },
 							},
 							tooltips: {
 								labels: { fontColor: "#FFF" },
@@ -210,7 +239,7 @@
 						}
 					},
 					
-					pie: { backgroundColor: [ ["rgba(0,0,0,1)" , "rgba(220,20,20,1)", "rgba(20,220,20,1)", "rgba(220,220,20,1)", "rgba(20,20,220,1)"] ]},
+					bar: { backgroundColor: [["rgba(136,170,0,0.8)", "rgba(56,132,153,0.8)", "rgba(255,204,0,0.8)", "rgba(255,42,42,0.8)", "rgba(0,51,128,0.8)"] ]},
 				}
 			});
 		</script>
