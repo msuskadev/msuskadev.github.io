@@ -1,504 +1,605 @@
-<!doctype html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+		<title>SpinControl</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+		<link rel='stylesheet' id='camera-css'  href='css/camera.css' type='text/css' media='all'>
 
-		<title>The thin line between love and hate...</title>
+		<link rel="stylesheet" type="text/css" href="css/slicknav.css">
+		<link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		
+		
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
-
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/league.css">
-
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>
-					<h1>The thin line between love and hate...</h1>
-					<h2>An approach of Test Automation</h2>
-
-					<!--<aside class="notes">
-						Cześć Wszystkim, nazywam się Mieczysław Suska i mam dzisiaj przyjemość opowiedzenia Wam o bardzo ciekawym oraz modnym temacie jakim jest automatyacja testów. Podczas tego TechTalku postaram się podejśc do tego tematu z różnych perspektyw, zarówno z perspektywy klienta, który zamawia u nas projekt związany z automatyzacją jak również testera. Dodatkowo chciałbym opowiedzieć o wszystkim co jest pociągające w automatyzacji testów, ale również o rzeczach mniej przyjemnych, z którymi każdy tester miał bądź ma do czynienia na codzień.
-					</aside>-->-->
-				</section>
-				<section>		
-					<h2>Who will talk to you?</h2>					
-					<p>Mieczysław Suska<br>  
-					  Senior Software Consultant at Capgemini</p>
-					<!--<aside class="notes">
-						Tak jak już wspomiałem nazywam się Mieczysław Suska, pracuję od niemal 6 lat w firmie Capgemini, jako Senior Software Consultant. Pod tą tajemniczą nazwą stanowiska kryje się to, że w projektach jestem team leaderem, architektem technologicznym, developerem czasami project managerem czli dużo odpowiedialności, iniestety tylko jedna pensja :-)
-					</aside>-->				
-				</section>			
-				<section data-background="/img/question.png" data-background-size="512px">
-					<h2>What the heck is he doing here?</h2>
-					
-						<!--<aside class="notes">
-							Przypuszczam, kilka osób zadało sobie to pytanie - co ja tutaj właściwie robię. Skoro nie jestem testerem, nie mam doświadczenia w testowanium to czy w takim razie powinienm tutaj być.
-						</aside>-->
-				</section>
-				<section data-background="/img/question.png" data-background-size="512px">
-					<h2>#iboast</h2>
-					<h3>3 Automation Projects</h3>
-					<img src="/img/calculator.gif" style="border: 0px;">
-					<img src="/img/testsummary.png" style="border: 0px;">
-
-					<!--<aside class="notes">
-							Pozwólcie, że się trochę pochwalę - przez ostatnie w lata brałem udział w trzech projektach związanych z automatyzacją. Z czego dwa zostały już zakończone z sukcesem, a trzeci trwa nadal. Razem z moim zespołem stworzyliśmy framework do automatyzacji Microsoftowych aplikacji desktopowych. Poniżej macie przykład działania naszego frameworka na przykładzie systamowego kalkulatora. Na potrzeby tego techtalka zautomatyzowałem tabliczkę mnożenia, 100 przypadków wykonuje się w 29 sekund, wszystkie kończą się sukcesem - także jeżeli kiedykolwiek zastanawialiście się czy kalkulator Microsoft dobrze wykonuje obliczenia - to to jest dowód na to, że jednak tak.
-							<br>
-Także wracając do pytania, myślę że te setki jak nie tysiące godzin spędzonych z klientem, tysące linii kodu oraz zmierzenie się z wieloma problemami związanymi typowo z automatyzacją pozwolły mi nabyć niezbędne doświadczenie i wiedzę, którą chciałbym się z Wami dzisiaj podzielić.
-						</aside>-->
-				</section>
-				<section data-background="#fff">
-					<h1>Buddy</h1>
-					<img src="/img/buddy.png" style="border: 0px; width: 500px">
-
-					<!--<aside class="notes">
-						Zanim przejdziemy dalej chciałbym, żebyście poznali mojego współprowadzącego - to jest Buddy, Buddy pomoże mi podczas tego techtalka, ale o nim za chwilę
-						</aside>-->
-				</section>
-				<section>
-					<img src="/img/lokowanie.png" style="background-color: transparent; border: none; ">
-					<!--<aside class="notes">
-						Myślę, że wypadałoby różnież wspomnieć, że sponsorem tego wydarzenia jest firma...
-					</aside>-->
-
-
-				</section>
-				<section>
-					<!--<aside class="notes">
-						Capgemini. Przypuszczam, że każdy na tej sali kojarzy logo i nazwę, ale prowadząc rozmowy kwalifikacyjne z kandydatami, wiem, że ludzie są zaskoczeni, gdy dowiadują się, że					
-					</aside>-->	
-					<section data-background="/img/capgemini_logo.png" data-background-size="800px">		
-					</section>
-						<section data-transition="fade-in slide-out">
-							<h1>Capgemini</h1>
-							<!--<h3 class="fragment fade-left">190,000 employees</h3>
-							<h3 class="fragment fade-right">present in over 40 countries</h3>-->
-							<h3 class="fragment fade-down">50th Anniversary in 2017</h3>
-						</section>
-						<section data-transition="fade-in slide-out">
-							<h2>Nearshore Test Center</h2>
-							<h3 class="fragment fade-left">12 Clients</h3>
-							<h3 class="fragment fade-right">20 Projects</h3>						
-							<section class="fragment">
-								<h3 class="fragment fade-down">64 Testers (avg. 30 years, exp. 7-8 years)</h3>
-								<div class="fragment fade-down" style="display: inline-flex">									
-									<div>
-										<img src="/img/girl.png" style="background-color: transparent; border: none; width: 100px; float: bottom;"/><br>
-										<h4>26 girls</h4>
-									</div>
-									<div style="margin-left: 80px">
-										<img src="/img/man.png" style="background-color: transparent; border: none; width: 100px; float: bottom;"/><br>
-										<h4>38 boys</h4>
-									</div>
-								</div>
-							</section>											
-						</section>					
-				</section>
-				<section data-background="#fff" data-transition="zoom">
-					<h1>Who is Buddy?</h1>
-					<img src="/img/buddy.png" style="border: 0px; width: 500px">
-
-					<!--<aside class="notes">
-						No dobra wróćmy do mojego współprowadzącego - kim jest Buddy i co on tutaj robi? Zacznę od tego co on tutaj robi. Buddy dzisiejszego wieczoru będzie pełnił dwie funkcje:
-
-po pierwsze będzie mnie wspomagał, bo nie o dzisiaj wiadomo, że raźniej jest robić coś we dwie osoby, szczególnie stać na scenie a dodatkowo jak coś pójdzie nie tak to będę miał na kogo zwalić całą winę
-druga funkcja - myślę, że bardziej istotna to taka, że część z Was wbrew pozorom będzie mogła się utożsamić z Buddym. Oczywiście z całym szacunkiem, ale nie doruwnacie mu urodą ani seksapilem, to co Was łączy to fakt, że Buddy tak jak większość z Was tutaj jest testerem manualnym
-					</aside>-->
-				</section>
-				<section data-background-image="/img/buddy_tree.png" data-background-size="contain" data-transition="convex">
-					<h4 class="fragment fade-in slide-out">Be familiar with project specification</h4>
-					<h4 class="fragment fade-up slide-out">Create test scenarios</h4>
-					<h4 class="fragment fade-down slide-out">Maintain test cases</h4>
-					<h4 class="fragment fade-left slide-out">Prepare test data</h4>
-					<h4 class="fragment fade-right slide-out">Always updated</h4>
-					<h4 class="fragment fade-in slide-out">Execute tests</h4>
-					<h2 class="fragment fade-in slide-out">Find bugs!</h2>
-				</section>
-				<section data-background-image="/img/desk.png" data-background-size="800px" data-transition="convex">
-					<h1 class="fragment fade-in slide-out">Buddy wants to become an automation tester!</h1>
-
-					<!--<aside class="notes">
-						Co jeszcze charakteryzuje Buddiego: Chce zostać testerem automatyzacji. Także jak widzicie opowiadając o wadach i zaletach automatyzacji, mam nadzieję, że pomogę Buddiemy (czyli de facto części z Was) podjąć decyzję o tym czy faktycznie to jest kierunek w ktorym chcialby sie rozwijac w przyszlosci - blizszej badz dalszej.
-					</aside>-->
-				</section>
-				<section data-transition="convex">
-					<h1>Are you ready?</h1>
-					<img src="/img/journey.png" style="background-color: transparent; border:none; width: 300px">
-				</section>
-				<section data-transition="zoom">
-					<h2>Test Automation</h2>
-					<h6>From Wikipedia</h6>
-					<blockquote cite="https://en.wikipedia.org/wiki/Test_automation" style="font-size: 30px">
-						In software testing, test automation is the use of special software (separate from the software being tested) to control the execution of tests and the comparison of actual outcomes with predicted outcomes. Test automation can automate some repetitive but necessary tasks in a formalized testing process already in place, or perform additional testing that would be difficult to do manually. Test automation is critical for continuous delivery and continuous testing.
-					</blockquote>
-				</section>
-				<section data-transition="convex">
-					<h2>Test Automation</h2>
-					<img src="/img/client_fmr.png" style="background-color: transparent; border:none; width: 800px">		
-					<!--<aside class="notes">
-						Automatyzacja testów to tak naprawdę jest jakieś oprogramowanie, jakieś narzędzie często nazwane frameworkiem, które otrzymując przypadki testowe w formie skryptów, dane testowe oraz aplikacje, która ma być przetestowana, wykonuje szereg operacji zwracając raport zawierający wyniki wykonania poszczegolych testow - tzw. pass rate (oczywiście najlepiej jak jest równy 100% czyli wszystkie testy zakonczone sukcesem), do tego nasz framework dostarcza wyniki 24/7/365 roku
-					</aside>-->				
-				</section>
-				<section data-transition="convex">
-					<h2>Test Automation</h2>
-					<section data-transition="zoom">
-						<h3>Phase 1</h3>
-						<img src="/img/investment_client_phase1.png" style="background-color: transparent; border:none; width: 850px">
-
-						<!--<aside class="notes">
-							Faza 1 Jeżeli klient ma wystarczający budżet, może go zainwestować w projekt automatyzacyjny oczywiście będize to skutkowało tym, że rozpoczęciu będzie widoczny pewien spadek wyników finansowych.
-						</aside>-->
-					</section>
-					<section data-transition="zoom">
-						<h3>Phase 2</h3>
-						<img src="/img/investment_client_phase2.png" style="background-color: transparent; border:none; width: 1000px">
-
-						<!--<aside class="notes">
-						Faza 2: Po pewnym czasie zacznie poprawi się jakość testowanej aplikacji - będzie mniej błędów oprogramowania, polepszy się stabilność testowanej aplikacji - a jeżeli mamy dobre jakościowe spabilne oprogramowanie, utrzymanie aplikacji jest prostsze i tańsze, co powoduje ze klient zaczyna miec oszczedności	
-						</aside>-->
-					</section>
-					<section data-transition="zoom">
-						<h3>Phase 3</h3>
-						<img src="/img/investment_client_phase3.png" style="background-color: transparent; border:none; width: 950px">
-
-						<!--<aside class="notes">
-						Faza 3: Wygenerowane oszczesności przyczyniaja sie lepszych wynikow finansowych czyli nastepuje tzw ROI czyli zwroz inwestycji, a gdy dodamy do tego fakt, ze poniewaz testy wykonuja sie automatycznie czesc pracownikow moze zostac zwolniona, co generuje jeszcze wieksze oszczednosci czyli de facto zysk
-						</aside>-->
-					</section>						
-				</section>
-				<section data-transition="zoom">
-					<h1>Sounds good?</h1>
-
-					<!--<aside class="notes">
-						Brzmi niezle prawda - oczywiscie nie dla tych osob ktore zostaly zwolnione, ale z perspektywy klienta jest to sytuacja niemal idealna
-					</aside>-->
-				</section>
-				<section data-transition="zoom">
-					<img src="/img/buddy_excitement.png" style="background-color: transparent; border:none; width: 550px">
-				</section>			
-				<section data-transition="zoom">
-					<h1>Let's continue...</h1>
-					<img src="/img/buddy_zone.png" style="background-color: transparent; border:none; width: 550px">
-				</section>
-				<section data-transition="convex">
-					<h1>Reality</h1>		
-					<!--<aside class="notes">
-						Przed chwila była mowa o definicji automatyzacji, czyli teoria, jak się domyślacie wyidealizowana, zobaczmy jak automatyzacja testów wygląda naprawdę.
-					</aside>-->
-				</section>
-				<section data-transition="zoom">
-					<h1>Hate</h1>		
-					<!--<aside class="notes">
-						Nawiązaując do tytułu Techtalka zacznijmy od Nienawiści - czyli od tego co nie jest fajne w projektach autmatyzacyjnych, co sprawia mnostwo problemow osobom zaangazowanym w projekt.						
-					</aside>-->			
-				</section>
-				<section data-transition="convex">
-					<h2>Real Test Automation</h2>
-					<div style="position: relative; width: 1000px;">
-						<img src="/img/real_test_automation.png" style="background-color: transparent; border:none; width: 1000px; position: relative; margin-top: 0; margin-left: 0;">
-						<span class="fragment fade-in slide-out" style="z-index: 100; position: absolute;left: 170px; top: 30px; font-size: 20px; text-align: left;">Outdated test cases<br>Tests not ready for automation</span>
-						<span class="fragment fade-in slide-out" style="z-index: 100; position: absolute;left: -120px; top: 300px; font-size: 20px; text-align: left;">No proper test data<br>No test data strategy in place<br>Hard coding test data</span>
-						<span class="fragment fade-in slide-out" style="z-index: 100; position: absolute;left: 180px; top: 420px; font-size: 20px; text-align: left;">Bugs in application<br>Developers not making their code automatable<br>Application not developed to be testable</span>
-						<span class="fragment fade-in slide-out" style="z-index: 100; position: absolute;right: 0px; top: 120px; font-size: 20px; text-align: left;">Setting unrealistic goals</span>		
-						<span class="fragment fade-in slide-out" style="z-index: 100; position: absolute;right: -100px; top: 420px; font-size: 20px; text-align: left;">No stable test environment<br>Not having a controlled test environment<br>Environment under development<br>Different environments</span>		
-					</div>
-				</section>
-				<section>
-					<section data-transition="zoom">
-						<h1>CLIENT</h1>
-						<img src="/img/manager.png" style="background-color: transparent; border:none; width: 400px">									
-
-						<!--<aside class="notes">
-							Kolejnym punktem, który jest związany a ta czescia "HATE" jest klient. Nie zrozumcie mnie zle, to nie oznacza ze mamy nienawidziec klienta - klient to sa bardzo fajni ludzie, daje name zarobic, dzieli sie z mani doswiadczeniem, wiedza zwiazana z okreslona branza. Co nie jest fajne to jego rozumienie pojecia automatyzacji. Oczywiscie tutaj dodam, ze to dotyczy tylko klientow, ktorzy dopiero zaczynaja przygode z automatyzacja i nie maja o tym zbyt duzego pojecia.
-						</aside>-->
-					</section>
-					<section>
-						<h1>Silver Bullet Syndrome</h1>
-					</section>
-					<section>
-						<h3>Myth 1</h3>
-						<h2>Automated testing can completely replace manual testing or<br>human testers</h2>
-						<!--<aside class="notes">
-							Testy automatyczne moga calkowicie zastapic testy manualne lub zastapic testerow manualnych. Jak sie domyslacie to jest kompletna bzdura, nie wszystko da sie zautomatyzaowac - o cyzm opowiem za chwile, a zwalniajac testerow manualnych, klient bardzo szybko bolesnie by sie przekonal o spadku jakosci ich oprogramowania. Dlaczego? Tester manualny charakteryzuje się tzw. czynnikiem ludzkim, dobry tester jest kreatywny, inteligentny, dociekliwy, lubi szukac dziury w calym. Test automatyczny jest tak dobry jak tester ktory go napisal, mimo to zawsze sprawdza to samo - czyli prawdopodobienstwo ze znajdzie nowy blad jest niewielkie. Potwierdzeniem tego jest wykres przedstawiony przez Dorothy Graham:
-						</aside>-->
-					</section>
-					<section data-background="#fff" data-background-transition="zoom">
-						<h3>Effectiveness in finding bugs</h3>
-						<canvas data-chart="bar">
-							,Automated tests, Exploratory tests, Manual tests, Fix verification
-							Dataset, 9.3, 58.2, 24, 8.4
-						</canvas>			
-					</section>
-					<section>
-						<h3>Myth 2</h3>
-						<h2>Automated tests can test everything</h2>
-					</section>
-					<section data-background="#fff" data-background-transition="zoom">
-						<h2>Tests not worth automating</h2>
-						<h3 class="fragment fade-in slide-out" style="color: rgb(56,132,153)">CAPTCHA</h3>
-						<h3 class="fragment fade-in slide-out" style="color: rgb(56,132,153)">One time test</h3>
-						<h3 class="fragment fade-in slide-out" style="color: rgb(56,132,153)">Test that don't have predictable results</h3>
-						<h3 class="fragment fade-in slide-out" style="color: rgb(56,132,153)">Usability testing</h3>
-					</section>				
-					<section>
-						<h3>Myth 3</h3>
-						<h2>Failing automated tests indicates all bugs in the code</h2>
-						<!--<aside class="notes">
-							Test automatyczny zakonczony niepowodzeniem nie oznacza ze znaleslizmy blad w aplikacji, w wiekszosci przypadkow problem lezy po stronie danych testowych, srodowiska
-						</aside>-->
-					</section>
-					<section>
-						<h3>Myth 4</h3>
-						<h2>Quick ROI</h2>
-						<!--<aside class="notes">
-							Szybki ROI czyli zwrot z inwestycji. Niestety czesto zdarza sie ze klienci oczekuja, natychnmiastowego zwrotu z inwestycji, ze po rozpoczeciu projektu automatyzacyjnego zaczna zauwazac poprawe stabilnosci aplikacji, co zacznie przyczyniac sie do wiekszych oszczednosci. Niestety zapominaja o tym, ze framework czyli caly rdzen musi zostac napisany a w najlepszym przypadku dopasowany do nowej aplikacji, a to wszystko trwa.
-						</aside>-->
-					</section>
-					<section data-background="#fff" data-background-transition="zoom">
-						<h3>Return on Investment</h3>
-						<canvas data-chart="bar">
-							,Immediately, 0-6 months, 6-12 months, 1+ years, Never
-							Dataset, 24, 24, 28, 15, 9
-						</canvas>			
-					</section>
-				</section>
-				<section>
-					<div style="position: relative; width: 1000px">
-						<h2>Buddy is feeling down</h2>
-						<img src="/img/buddy_frightend.png" style="position: relative; background-color: transparent; border:none; width: 580px; left: -200px"></img>
-						<img src="/img/buddy_frustrated.png" style="position: relative; background-color: transparent; border:none; width: 580px; left: 250px; top: -200px;"></img>
-					</div>
-
-					<!--<aside class="notes">
-						Poczatkowa faza projektu, w ktorej musimy wytlumaczyc klientowi zeby przestal patrzec na automatyzacje jak na cudowne panaceum jest dosyc stresujacym okresem, pelnym trudnych rozmow i stresu.
-
-Jak widzicie tych codziennych trudnosci zwiazanych z automatyzacja jest calkiem sporoi niestety jak widac na przykladzie Buggiego moga one zdemotywowac.
-					</aside>-->
-				</section>
-				<section data-transition="zoom">
-					<h1>LOVE</h1>		
-					<!--<aside class="notes">
-						Na szczescie jest tez druga strona medalu - ta lepsza.
-
-						Za co mozna pokchac automatyzacje testow:
-					</aside>-->			
-				</section>
-				<section data-transition="zoom">
-					<h1>CLIENT</h1>
-					<img src="/img/manager.png" style="background-color: transparent; border:none; width: 400px">	
-
-					<!--<aside class="notes">
-						Nie to nie błąd - klient. Był obecny w poprzediej części, jest także obecny tutaj. Bazując na moim doświadczeniu oraz doświadczeniu kolegów w pracy wiem, że klient jest zawsze szczególnie mocno zaangażowany w projekty automatyzacyjne. Także jeżeli lubicie mieć bardzo czesty kontakt z klientem, duzo rozmow, spotkan czy wyjazdow. Automatyzacja to jest z pewnoscia cos dla Was. Macie szanse poprawić swój język obcy, przejąć wiedzę i nabierać cennego doświadczenia lisko współpracując z managementem czasami nawet top managementem po stronie klienta.
-					</aside>-->								
-				</section>
-				<section>
-					<section data-transition="zoom">
-						<h1>We're all testers now</h1>		
-						<!--<aside class="notes">
-							Wszyscy jesteśmy testerami. Tak to nowy trend w całej branży IT. Za testy, stabilność czy jakość aplikacji są od teraz odpowiedialni wszyscy, zarówno testerzy, jak również developerzy architekci a także osoby nietechniczne.
-						</aside>-->									
-					</section>
-					<section data-background="#fff">
-						<h2>No more...</h2>
-						<img src="/img/go_be.jpg" style="border: 0px; width: 650px">
-						<!--<aside class="notes">
-							Już nie jest tak, że tester jest traktowany jako zło konieczne, ktoś kto opóźnia wdrożenia i czepia się, że znalazł bug, podczas gdy na moim komputerze wszystko pięknie działa. Przed tym techtalkiem poprosiłem testerów manualnych a podzieleine się swoimi doświaczeniami i cześć z nich właściwie potwierdziła mi, że przed era automatyzacji trudno było cokolwiek wyegzekwować od zespołów deweloperskich, był widoczny konflikt pokoleń, lekceważwnie sugestii testerów itd. Gdy do ich projektów weszła automatyzacja, wszystko się zmieniło, bo developerzy musieli zacząc blisko wspolpracowac z testerami, a gdy zaczely byc widoczne pierwsze benefity wynikajace z automatyzaji, wiekszosc problemow nazwijmy je pokoleniiowo-komunikacyjnych zniknelo.
-
-Oprocz tego w automatyzacji czesto biora udzial osoby nietechniczne tzn. sa frameworki np. Cucumber ktore umozliwiaja pisanie testow jezykiem naturalnym. Kolejny przyklad - w moim pierwszym projekcie najwiekszym wyzawniem bylo to, że mialbyc napisany w mozliwie jak najprostszy sposob, aby osoby z podstawowymi (czytaj. zadnymi) umiejetnosciami programistycznymi byly w stanie automatyzowac testy.
-						</aside>-->
-					</section>
-				</section>
-				<section data-transition="zoom">
-					<h1>Frameworks & Tools</h1>
-					<!--<aside class="notes">
-						Dla mnie osobiście to jest jedenz z najciekawszych punktow - frameworki i toole. Jezeli lubicie sie uczyc czegos nowego, lubicie sie rozwijac i staracie sie byc na biezaco - zostanie testerem automatyzacji zapewni wam rozrywke na nastepne kilka tygodni a nawet miesiecy. Na dzien dzisiejszy jest mnostwo frameworkow i tooli ktore wspomagaja automatyzacje testow. oczywiscie to co tu widzisie to nie wszystko, a co miesiac pojawia sie cos nowego. Oczywiscie nikt nie bedzie wymagal od Was znajomosci tych wszystkich frameworkow, ale z drugiej duza czesc z tych tooli mozna nauczyc sie przy pomocy tutoriali w jeden wieczor, co pokazuje ze bycie ekspertem, ktory zna zastosowanie i ograniczenia poszczegolnych projektow nie jest czyms nadzwyczajnie trudnym.
-					</aside>-->
-				</section>
-				<section data-background="#fff" data-transition="zoom">
-					<img src="/img/logos.png" style="background-color: transparent; border:none;">									
-				</section>
-				<section data-transition="zoom">
-					<h1>You will have your hands full</h1>
-					<!--<aside class="notes">
-						Jezeli nie lubicie sie nudzic w pracy, a pracujecie wydajniej gdy macie rece pelne roboty - w projektach automatyzacyjnych na pewno nie bedziecie sie nudzic.
-					</aside>-->
-				</section>
-				<section data-background="#fff" data-transition="convex">
-					<h2>Tests worth automating</h2><br>
-					<h6 class="fragment fade-in slide-out" style="color: rgb(56,132,153)">Deterministic tests</h6>
-					<h6 class="fragment fade-up slide-out" style="color: rgb(56,132,153)">Tests needed to be run as much as possible</h6>
-					<h6 class="fragment fade-down slide-out" style="color: rgb(56,132,153)">Tests that focus on the money and risk areas of your application</h6>
-					<h6 class="fragment fade-left slide-out" style="color: rgb(56,132,153)">Tests that are hard to test manually</h6>
-					<h6 class="fragment fade-right slide-out" style="color: rgb(56,132,153)">Test that need to run against multiple builds and browsers</h6>
-					<h6 class="fragment fade-in slide-out" style="color: rgb(56,132,153)">Load/stress tests</h6>
-
-					<!--<aside class="notes">
-						testy ktore skupiaja sie na najbardziej kluczowej czesci aplikacji - oczywiscie jezeli chodzi o wykrywanie bledow nic nie zastapi czlowieka, ale jezeli te same testy musza byc odpalane non stop, nic nie pokona testu automatycznego - test automatyczny nie ma 8 godzinego czasu pracy, nie bierze urlopu, nie wyjezdza na weekend, casami choruje, ale mozna go latwo wyleczyc i to bez powiklan <br>
-
-						testy ktore ciezko przetestowac manualnie - np. zasymulowac jednoczesny dostep do zasobow przez 1000 uzytkownikow<br>
-
-testy ktore musza byc wykonywane na rownych przegladarkach i testowac rozne wersje oprogramowania<br>
-
-load testy stress testy
-					</aside>-->
-					
-				</section>
-				<section data-transition="zoom">
-					<h1>Changing career path</h1>
-					<!--<aside class="notes">
-						Stajac sie testerem automatyzacji powoli zaczynasz byc osoba bardziej techniczna - dzieje sie tak za sprawa tego ze musicie pisac kod testu automatyzacyjnego, dodawac nowe funkcjonalnosci frameworka a czasami modyfikowac aplikacje, ktora macie testowac poprzez dodanie zmian ulatwiajacych wam wutomatyzacje. Majac takie doswiadczenie z powodzeniem po pewnym czasie mozecie przejsc ze sciezki testerskiej na sciezke developerska. W moim zespole to wydarzylo sie dwa razy
-					</aside>-->
-				</section>
-				<section>
-					<section data-transition="zoom">
-						<h1>Dynamically growing IT branch</h1>					
-						<!--<aside class="notes">
-							Dynamiczne rozwijajaca sie galaz IT. Jezeli spojrzycie na wykres ze strony Google trends zobacycie ze np. dla Selenium - jednego z najpopularniejszych frameworkow do automatyzacji testow aplikacji webowych - mozena zaobserwowac niemalze staly wzrost zainteresowania tym tematem poczynajac od roku 2012. A jezeli nalozymy na to trend dla pojecia DEVOPS scisle zwiazanego z automatyzacja zobacyzcie ze wzrost jest jeszcze wiekszy
-						</aside>-->
-					</section>
-					<section data-transition="convex">
-						<h2>Google Trends - Selenium</h2>
-						<img src="/img/seleniumtrends.png" style="background-color: transparent; border:none;">		
-					</section>
-					<section data-transition="convex">
-						<h2>Google Trends - DevOps</h2>
-						<img src="/img/devopstrends.png" style="background-color: transparent; border:none;">		
-					</section>
-				</section>
-				<section data-background="#fff" data-transition="zoom">
-					<h2>What the future holds?</h2>
-					<img src="/img/buddy.png" style="border: 0px; width: 500px">
-					<!--<aside class="notes">
-						Wróćmy do naszego Buddiego. Mam nadzieje ze udalo mi sie przedstawic zarowno mu jak rowniez Wam wszystkie plusy i minusy zwiazane z tematyka testow automatyzacyjnych. Myślę, że warto było by odpowiedzieć na to pytanie? Co przyniesie przyszłość? Czy to nie będzie tak ze ta modna automatyzacja za rok czy dwa po prostu przeminie? Spójrzmy zatem na Trendy związane z Automatyzacja
-					</aside>-->
-				</section>
-				<section data-transition="zoom">
-					<h1>Trends in Test Automation</h1>
-				</section>
-				<section data-transition="zoom">
-					<h2>DEVOPS</h2>
-					<img src="/img/devops.png" style="background-color: transparent; border:none;">
-
-					<!--<aside class="notes">
-						Jest to pewien sposob wytwarzania oprogramiwania, scisle zwiazany z Agilem i automatyzacja a polega na tym ze zmiany sa deployowane na produkcje jak najszybciej sie da. Nawet 10 razy dziennie. Chodzi o to ze po napisaniu kawalka kodu, zmiany sa budowane, testowane automatycznie, kod jest statycznie analizowany a następnie releasowany i wdrozony na produkcje gdzie zaczyna byc monitorowany i tak w kolko. Jak widzieliscie na wykresie coraz wiecej firm zaczyna stosowac te podejscie wytwarzania oprogramowania, co ma zwiazaek z tym ze coraz wiecej firm bedzie potrzebowalo zautomatyzowac testy
-					</aside>-->
-				</section>
-				<section data-transition="zoom">
-					<h2>Data Virtualization</h2>	
-
-					<!--<aside class="notes">
-						Trend numer 2:
-Wirtualizacja danych oraz uslugi oparte na chmurze z dnia na dzien staja sie coraz bardziej popularne. Firmy przestaja utrzymywac wlasne serwery powoli obracaja sie w kierunku wykorzystania chmur w swojej infrastrukturze, zarowno do zastosowan produkcyjnych oraz testowych. A ponieważ serwisy oparte na chmurze sa skalowanje, latwe w zarzadzaniu, w niedalekiej przyszloscie moze okazac sie ze te typowe problemy zwiazane z danymi testowymi po prostu znikna co spowoduje ze automatyzacja bedzie jeszcze latwiejsza, jeszcze bardzie wydajna wiec wieksze pieniadze beda w nia ladowane.
-					</aside>-->				
-				</section>
-				<section data-transition="zoom">
-					<h2>Internet of Things</h2>		
-					<img src="/img/iot.jpg" style="background-color: transparent; border:none; width: 500px">		
-					<!--<aside class="notes">
-						Kolejny trend IoT: Wedlug Cisco do roku 2020 ponad 50 miliardów urządzeń będzie podłączonych do internetu (na dzień dzisiejszy jest ich ok 18 miliardów). To wszystko musi byc przetestowane i to nie tylko pod wzgledem oprogramowania ale takze hardwaru, byloby to niemozliwe jezeli mielibysmy polegac tylko na testach manualnych, ale jezeli dodamy do ego automatyzacje - cel wydaje sie byc osiagalny do zrealizowania.
-					</aside>-->	
-				</section>
-				<section data-transition="zoom">
-					<h2>Self Driving Cars Testing</h2>		
-					<img src="/img/electric-car.png" style="background-color: transparent; border:none; width: 400px">		
-
-					<!--<aside class="notes">
-						Automomiczne pojazdy - to akurat dzieje się na naszych oczach. Kazdy szanujacy sie producent samochodowy pracuje nad wlasna wersja samochodu przyszlosci oczywiscie bez kierowcy po lewej badz prawej stronie - te miliony linii kodu musza byc jakos testowane, w czasie rzeczywistym i oczywiscie w jak najkrotszym czasie. W przypadku pojazdow ktore maja same sie poruszac, testowanie jest wazniejsze niz kiedykolwiek przedtem. Musimy miec niemal 100% pewnosc ze dany pojazd w wyniku bledu nie wjedzie w grupe przedszkolakow czy nie zjedzie na przeciwy pas.
-					</aside>-->	
-				</section>
-				<section data-transition="zoom">
-					<h2>Virtual Reality</h2>		
-					<img src="/img/vr.png" style="background-color: transparent; border:none; width: 600px">
-
-					<!--<aside class="notes">
-						I ostatni trend: Jezeli zaufac najwieszym czyli facebookowi, Microsoftowi czy Samsungowi - wirtualna rzeczywistosc to nasza przyszlosc. Ale zeby ta przyszlosc sie urzeczywisnila potrzebne jest oprogramowanie, specjalne sensory oraz milony dolarow wladowane w testowanie tych rozwiazan oczywiscie w sposob automatyczny.
-					</aside>-->			
-				</section>
-				<section>
-					<img src="/img/lokowanie.png" style="background-color: transparent; border:none;">
-
-					<!--<aside class="notes">
-						To już niemal wszstko co dla Was przygotowałem, I już na sam koniec chciałem Wam powiedziec o jednej możliwości - jeżeli ktoś z Was przed tym spotkaniem albo lepiej po tym techtalki doszedl badz dojdzie do wniosku ze moze warto byloby zmierzyc sie z automatyzacją
-					</aside>-->
-				</section>
-				<section data-background="#fff">
-					<h2 style="color: rgb(0,128,128);">Test Automation Level Up Program</h2>
-					<img src="/img/levelup.jpg" style="border: 0px; width: 1200px;"><br><br>
-					<h3><a href="https://www.capgeminisoftware.pl/level">HTTPS://WWW.CAPGEMINISOFTWARE.PL/LEVEL</a></h3>
-
-					<!--<aside class="notes">
-						Firma Capgemini uruchomila program o nazwie LevelUp skierowany do testerow manualnych, polegajacy na tym ze przez dwa miesiace bedziecie mieli mozliwosc nauczenia przygotowywania testow automatycznych, podstaw programowania w Javie, automatyzacji w Selenium oraz Uzywania SoapUi. Za co dodatkowo bedziecie dostawali wynagrodznie. Po dwoch miesiacach osoby ktore zrobily najwieksze postepy beda miec przedluzona umowe na czas nieokreslony. Wszystkie potzebne linki macie tutaj
-					</aside>-->
-				</section>
-				<section data-background="#fff" data-transition="zoom">	
-					<img src="/img/buddy_levelup.png" style="border: 0px;">
-					<!--<aside class="notes">
-						Jak widzicie Buddy juz zaaplikował, madzieję ze choc czesc z Was Zrobi to samo :-).
-					</aside>-->
-				</section>
-				<section data-background="/img/thatsallfolks.jpg" data-background-size="1900px" data-transition="convex">
-					<!--<img src="/img/thats_all_folks.jpg" style="border: 0px; width: 1200px;"><br><br>-->
-				</section>
-			</div>
-		</div>
-
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700|Open+Sans:700' rel='stylesheet' type='text/css'>
+		<script type="text/javascript" src="js/jquery.mobile.customized.min.js"></script>
+		<script type="text/javascript" src="js/jquery.easing.1.3.js"></script> 
+		<script type="text/javascript" src="js/camera.min.js"></script>
+		<script type="text/javascript" src="js/myscript.js"></script>
+		<script src="js/sorting.js" type="text/javascript"></script>
+		<script src="js/jquery.isotope.js" type="text/javascript"></script>
+		<!--script type="text/javascript" src="js/jquery.nav.js"></script-->
+		
 
 		<script>
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				history: true,
-
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
-					{ src: 'plugin/chart/Chart.min.js' },				
-					{ src: 'plugin/chart/csv2chart.js' },
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				],
-
-				chart: {
-					defaults: { 
-						global: { 							
-							title: { 
-								fontColor: "#FFF" }, 
-							legend: {
-								display: false,
-								position: "right",
-								labels: { fontColor: "#FFF",
-										  fontSize: 20,
-										  fontStyle: "bold" },
-							},
-							tooltips: {
-								labels: { fontColor: "#FFF" },
-							},
-						}, 	
-						options : {
-							responsive: true,
-							animation:{
-            					animateScale:true
-							}
-						}
-					},
-					
-					bar: { backgroundColor: [["rgba(136,170,0,0.8)", "rgba(56,132,153,0.8)", "rgba(255,204,0,0.8)", "rgba(255,42,42,0.8)", "rgba(0,51,128,0.8)"] ]},
-				}
+			jQuery(function(){
+					jQuery('#camera_wrap_1').camera({
+					transPeriod: 500,
+					time: 3000,
+					height: '490px',
+					thumbnails: false,
+					pagination: true,
+					playPause: false,
+					loader: false,
+					navigation: false,
+					hover: false
+				});
 			});
 		</script>
+		
+	</head>
+	<body>
+    
+    <!--home start-->
+    
+    <div id="home">
+    	<div class="headerLine">
+	<div id="menuF" class="default">
+		<div class="container">
+			<div class="row">
+				<div class="logo col-md-4">
+					<div>
+						<a href="#">
+							<img src="images/logo.png">
+						</a>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div class="navmenu"style="text-align: center;">
+						<ul id="menu">
+							<li class="active" ><a href="#home">Home</a></li>
+							<li><a href="#about">O nas</a></li>
+							<li><a href="#project">Projekty</a></li>
+							<li><a href="#news">Partnerzy</a></li>
+							<li class="last"><a href="#contact">Kontakt</a></li>
+							<!--li><a href="#features">Features</a></li-->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		<div class="container">
+			<div class="row wrap">
+				<div class="col-md-12 gallery"> 
+						<div class="camera_wrap camera_white_skin" id="camera_wrap_1">
+							<div data-thumb="" data-src="images/slides/blank.gif">
+								<div class="img-responsive camera_caption fadeFromBottom">
+									<h2>Projektujemy.</h2>
+								</div>
+							</div>
+							<div data-thumb="" data-src="images/slides/blank.gif">
+								<div class="img-responsive camera_caption fadeFromBottom">
+									<h2>Tworzymy.</h2>
+								</div>
+							</div>
+							<div data-thumb="" data-src="images/slides/blank.gif">
+								<div class="img-responsive camera_caption fadeFromBottom">
+									<h2>Wdrażamy.</h2>
+								</div>
+							</div>
+						</div><!-- #camera_wrap_1 -->
+				</div>
+			</div>
+		</div>
+	</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 project">
+					<h3 id="counter">0</h3>
+					<h4>lat doświadczenia</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				</div>
+				<div class="col-md-4 project">
+					<h3 id="counter1">0</h3>
+					<h4>wdrożonych projektów</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit quisque tempus eget diam et. laoreet phasellus ut nisi id leo.  </p>
+				</div>
+				<div class="col-md-4 project">
+					<h3 id="counter2" style="margin-left: 20px;">0</h3>
+					<h4 style="margin-left: 20px;">znakomitych specjalistów</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit quisque tempus eget diam et. laoreet phasellus ut nisi id leo. </p>
+				</div>
+			</div>
+		</div>  
+    </div>
+    
+    <!--about start-->    
+    
+    <div id="about">
+    	<div class="line2">
+			<div class="container">
+				<div class="row Ama">
+					<div class="col-md-12">
+					<span name="projects" id="projectss"></span>
+					<h3>Kim jesteśmy</h3>
+					<p>Poznaj nas bliżej</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 bar">
+					<div class="progB chart" data-percent="64"  data-animate="3500">
+						<div class="chart chart-content">
+							<div class="percentage" data-percent="64">
+								<span class="percent">64</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 wwa">
+					<span name="about" ></span>
+					<h4 style="text-align: left;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 hr1">
+					<hr/>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+				<div class="row">
+					<div class="col-md-12 bar">
+						<div class="progB chart" data-percent="64"  data-animate="3500">
+							<div class="chart chart-content">
+								<div class="percentage" data-percent="64">
+									<span class="percent">64</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 wwa">
+						<span name="about" ></span>
+						<h4 style="text-align: left;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 hr1">
+						<hr/>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 bar">
+						<div class="progB chart" data-percent="64"  data-animate="3500">
+							<div class="chart chart-content">
+								<div class="percentage" data-percent="64">
+									<span class="percent">64</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 wwa">
+						<span name="about" ></span>
+						<h4 style="text-align: left;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
+					</div>
+				</div>
+			</div>
+    </div>
+    <!--project start-->    
+    <div id="project">    	
+		<div class="line3">
+			<div class="container">
+				<div id="project1" ></div>
+				<div class="row Ama">
+					<div class="col-md-12">
+					<span name="projects" id="projectss"></span>
+					<h3>Nasze projekty</h3>
+					<p>Zobacz co stworzyliśmy</p>
+					</div>
+				</div>
+			</div>
+		</div>          
+    
+		<div class="container">
+				<div class="row team">
+					<div class="col-md-6 b1">
+						<img class="img-responsive" src="images/projects/scts.png">
+						<h4>SpinControl Traceability System</h4>					
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>							
+					</div>
+				
+					<div class="col-md-6 b1">
+						<img class="img-responsive" src="images/projects/scvs.png">
+						<h4>SpinControl Visualisation System</h4>					
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>							
+					</div>
+				</div>
+			</div>
+    </div>    
+    
+    <!--news start-->
+    
+    <div id="news">
+    	<div class="line4">		
+			<div class="container">
+				<div class="row Ama">
+					<div class="col-md-12">
+					<h3>Nasi Partnerzy</h3>
+					<p>Z kim współpracujemy</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row team">
+				<div class="col-md-4 b1">
+						<img class="img-responsive" src="images/partners/cadmech.png">
+						<h4>Cad-Mech Sp. z o. o.</h4>					
+						<p>Cad-Mech Sp. z o. o. jest firmą z wieloletnim doświadczeniem w zakresie projektowania i wdrażania innowacyjnych rozwiązań technicznych w firmach.</p>
+						<ul>
+							<li><a href="http://cadmech.pl" target="_blank"><i class="fa fa-globe"></i></a></li>
+							<li><a href="https://www.facebook.com/Cad-Mech-1131143446902991/" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
+						</ul>
+				</div>
+			
+			
+				<div class="col-md-4">
+						<img class="img-responsive" src="images/partners/sds.png">
+						<h4>SDS-Automatyka Poplawski Sp.J.</h4>
+						<p>Świadczymy usługi w zakresie doradztwa doboru komponentów automatyki przemysłowej, sprzedaży oraz prowadzenia warsztatów. Prowadzimy sprzedaż rozwiązań Yaskawa, VIPA, Beijer, Softing, HIMA.</p>
+						<ul>
+							<li><a href="http://sds-automatyka.pl/" target="_blank"><i class="fa fa-globe"></i></a></li>
+							<li><a href="https://www.facebook.com/SDS-Automatyka-Poplawski-Sp-J-133911357012455/" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
+						</ul>
+				</div>
+		
+			
+				<div class="col-md-4 b3">
+						<img class="img-responsive" src="images/partners/sortbet.png">
+						<h4>Sort-Bet Sp. z o.o.</h4>
+						<p>Sort-Bet Sp. z o.o. prowadzi działalność biznesową w ramach kilku podstawowych segmentów, oferujących określone produkty i usługi adresowane do konkretnych grup Klientów.</p>
+						<ul>
+							<li><a href="http://www.sortbet.pl" target="_blank"><i class="fa fa-globe"></i></a></li>
+						</ul>
+				</div>
+			</div>
+		</div>
+		<!--<div class="container">
+				<div class="row news">
+					<div class="col-md-6  text-left">
+					<img class="img-responsive picsGall" src="images/picNews/news1.jpg"/>
+					<h3><a href="#">Lorem Ipsum Dolor sit Amet Pelenntesque Sodales!</a></h3>
+					<ul>
+						<li><i class="fa fa-calendar"></i>April 25, 2014</li>
+						<li><a href="#"><i class="fa fa-folder-open"></i>Staff</a></li>
+						<li><a href="#"><i class="fa fa-comments"></i>17 comments</a></li>
+					</ul>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit quisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie. adipiscing vitae vel quam proin eget mauris eget. <a class="readMore" href="#">Read More <i class="fa fa-angle-right"></i></a></p>
+					<hr class="hrNews">
+					</div>
+					<div class="col-md-6 text-right">
+					<img class="img-responsive picsGall" src="images/picNews/news2.jpg"/>
+					<h3><a href="#">Nam in Nisl id Ipsum Feugiat Posuere ut sit Amet Sem</a></h3>
+					<ul>
+						<li><i class="fa fa-calendar"></i>April 25, 2014</li>
+						<li><a href="#"><i class="fa fa-folder-open"></i>Staff</a></li>
+						<li><a href="#"><i class="fa fa-comments"></i>17 comments</a></li>
+					</ul>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit quisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie. adipiscing vitae vel quam proin eget mauris eget. <a class="readMore" href="#">Read More <i class="fa fa-angle-right"></i></a></p>
+					<hr class="hrNews">
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row news2 news">
+					<div class="col-md-6 text-left">
+					<img class="img-responsive picsGall" src="images/picNews/news3.jpg"/>
+					<h3><a href="#">Lorem Ipsum Dolor sit Amet Pelenntesque Sodales!</a></h3>
+					<ul>
+						<li><i class="fa fa-calendar"></i>April 25, 2014</li>
+						<li><a href="#"><i class="fa fa-folder-open"></i>Staff</a></li>
+						<li><a href="#"><i class="fa fa-comments"></i>17 comments</a></li>
+					</ul>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit quisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie. adipiscing vitae vel quam proin eget mauris eget. <a class="readMore" href="#">Read More <i class="fa fa-angle-right"></i></a></p>
+					<hr class="hrNews">
+					</div>
+					<div class="col-md-6 text-right">
+					<img class="img-responsive picsGall" src="images/picNews/news4.jpg"/>
+					<h3><a href="#">Nam in Nisl id Ipsum Feugiat Posuere ut sit Amet Sem</a></h3>
+					<ul>
+						<li><i class="fa fa-calendar"></i>April 25, 2014</li>
+						<li><a href="#"><i class="fa fa-folder-open"></i>Staff</a></li>
+						<li><a href="#"><i class="fa fa-comments"></i>17 comments</a></li>
+					</ul>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit quisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie. adipiscing vitae vel quam proin eget mauris eget. <a class="readMore" href="#">Read More <i class="fa fa-angle-right"></i></a></p>
+					<hr class="hrNews">
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row news2 news">
+					<div class="col-md-6 text-left">
+					<img class="img-responsive picsGall" src="images/picNews/news5.jpg"/>
+					<h3 ><a href="#">Lorem Ipsum Dolor sit Amet Pelenntesque Sodales!</a></h3>
+					<ul>
+						<li><i class="fa fa-calendar"></i>April 25, 2014</li>
+						<li><a href="#"><i class="fa fa-folder-open"></i>Staff</a></li>
+						<li><a href="#"><i class="fa fa-comments"></i>17 comments</a></li>
+					</ul>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit quisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie. adipiscing vitae vel quam proin eget mauris eget. <a class="readMore" href="#">Read More <i class="fa fa-angle-right"></i></a></p>
+					<hr class="hrNews">
+					</div>
+					<div class="col-md-6 text-right">
+					<img class="img-responsive picsGall" src="images/picNews/news6.jpg"/>
+					<h3><a href="#">Nam in Nisl id Ipsum Feugiat Posuere ut sit Amet Sem</a></h3>
+					<ul>
+						<li><i class="fa fa-calendar"></i>April 25, 2014</li>
+						<li><a href="#"><i class="fa fa-folder-open"></i>Staff</a></li>
+						<li><a href="#"><i class="fa fa-comments"></i>17 comments</a></li>
+					</ul>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit quisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie. adipiscing vitae vel quam proin eget mauris eget. <a class="readMore" href="#">Read More <i class="fa fa-angle-right"></i></a></p>
+					<hr class="hrNews">
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			<div class="container hideObj2" style="display:none;">
+				<div class="row news2 news">
+					<div class="col-md-6 text-right">
+					<img class="img-responsive picsGall" src="images/picNews/news6.jpg"/>
+					<h3><a href="#">Nam in Nisl id Ipsum Feugiat Posuere ut sit Amet Sem</a></h3>
+					<ul>
+						<li><i class="fa fa-calendar"></i>April 25, 2014</li>
+						<li><a href="#"><i class="fa fa-folder-open"></i>Staff</a></li>
+						<li><a href="#"><i class="fa fa-comments"></i>17 comments</a></li>
+					</ul>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit quisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie. adipiscing vitae vel quam proin eget mauris eget. <a class="readMore" href="#">Read More <i class="fa fa-angle-right"></i></a></p>
+					<hr class="hrNews">
+					</div>
+					<div class="col-md-6 text-left">
+					<img class="img-responsive picsGall" src="images/picNews/news5.jpg"/>
+					<h3 ><a href="#">Lorem Ipsum Dolor sit Amet Pelenntesque Sodales!</a></h3>
+					<ul>
+						<li><i class="fa fa-calendar"></i>April 25, 2014</li>
+						<li><a href="#"><i class="fa fa-folder-open"></i>Staff</a></li>
+						<li><a href="#"><i class="fa fa-comments"></i>17 comments</a></li>
+					</ul>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit quisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie. adipiscing vitae vel quam proin eget mauris eget. <a class="readMore" href="#">Read More <i class="fa fa-angle-right"></i></a></p>
+					<hr class="hrNews">
+					</div>
+				</div>
+			</div>
+			<div class="container">
+			<div class="row cBtn">
+				<div class="col-md-12" style="text-align: center; margin-bottom: -90px; z-index: 10;">
+					<ul class="mNews">
+						<li class="dowbload bhide2"><a href="#"><i class="fa fa-arrow-down"></i>Load More news</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>-->
+    </div>
+    
+    
+    <!--contact start-->
+    
+    <div id="contact">
+    	<div class="line5">					
+			<div class="container">
+				<div class="row Ama">
+					<div class="col-md-12">
+					<h3>Masz pytania? Skontaktuj się z nami!</h3>		
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9 col-xs-12 forma">
+					<form>
+						<input type="text" class="col-md-6 col-xs-12 name" name='name' placeholder='Imię i nazwisko *'/>
+						<input type="text" class="col-md-6 col-xs-12 Email" name='Email' placeholder='Email *'/>
+						<input type="text" class="col-md-12 col-xs-12 Subject" name='Subject' placeholder='Temat'/>
+						<textarea type="text" class="col-md-12 col-xs-12 Message" name='Message' placeholder='Wiadomość *'></textarea>
+						<div class="cBtn col-xs-12">
+							<ul>
+								<li class="clear"><a href="#"><i class="fa fa-times"></i>clear form</a></li>
+								<li class="send"><a href="#"><i class="fa fa-share"></i>Send Message</a></li>
+							</ul>
+						</div>
+					</form>
+				</div>
+				<div class="col-md-3 col-xs-12 cont">
+					<ul>
+						<li><i class="fa fa-home"></i>SpinControl Sp. z. o.o., 5512 Lorem Ipsum Vestibulum 666/13</li>
+						<li><i class="fa fa-phone"></i>+48 605 364 955, +48 605 364 955</li>
+						<li><a href="#"><i class="fa fa-envelope"></i>biuro@spincontrol.pl</li></a>
+						<li><a href="#"><i class="fa fa-facebook-square"></i>Facebook</li></a>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="line6">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d48386.401887313725!2d-73.9407136!3d40.7147117!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sua!4v1402409149092" width="100%" height="750" frameborder="0" style="border:0"></iframe>			
+		</div>		
+		
+		<div class="lineBlack">
+			<div class="container">
+				<div class="row downLine">				
+					<div class="col-md-6 text-left copy">
+						<p>Copyright &copy; 2017 SpinControl.pl. Wszelkie prawa zastrzeżone.</p>
+					</div>
+					<div class="col-md-6 text-right dm">
+						<ul id="downMenu">
+							<li class="active"><a href="#home">Home</a></li>
+							<li><a href="#about">O nas</a></li>
+							<li><a href="#project1">Projekty</a></li>
+							<li><a href="#news">Partnerzy</a></li>
+							<li class="last"><a href="#contact">Kontakt</a></li>
+							<!--li><a href="#features">Features</a></li-->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>		
+		
+		
+	<script src="js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.slicknav.js"></script>
+	<script>
+			$(document).ready(function(){
+			$(".bhide").click(function(){
+				$(".hideObj").slideDown();
+				$(this).hide(); //.attr()
+				return false;
+			});
+			$(".bhide2").click(function(){
+				$(".container.hideObj2").slideDown();
+				$(this).hide(); // .attr()
+				return false;
+			});
+				
+			$('.heart').mouseover(function(){
+					$(this).find('i').removeClass('fa-heart-o').addClass('fa-heart');
+				}).mouseout(function(){
+					$(this).find('i').removeClass('fa-heart').addClass('fa-heart-o');
+				});
+				
+				function sdf_FTS(_number,_decimal,_separator)
+				{
+				var decimal=(typeof(_decimal)!='undefined')?_decimal:2;
+				var separator=(typeof(_separator)!='undefined')?_separator:'';
+				var r=parseFloat(_number)
+				var exp10=Math.pow(10,decimal);
+				r=Math.round(r*exp10)/exp10;
+				rr=Number(r).toFixed(decimal).toString().split('.');
+				b=rr[0].replace(/(\d{1,3}(?=(\d{3})+(?:\.\d|\b)))/g,"\$1"+separator);
+				r=(rr[1]?b+'.'+rr[1]:b);
+
+				return r;
+}
+				
+			setTimeout(function(){
+					$('#counter').text('0');
+					$('#counter1').text('0');
+					$('#counter2').text('0');
+					setInterval(function(){
+						
+						var curval=parseInt($('#counter').text());
+						var curval1=parseInt($('#counter1').text().replace(' ',''));
+						var curval2=parseInt($('#counter2').text());
+						if(curval<=19){
+							$('#counter').text(curval+1);
+						}
+						if(curval1<=30){
+							$('#counter1').text(curval1+1);
+						}
+						if(curval2<=15){
+							$('#counter2').text(curval2+1);
+						}
+					}, 2);
+					
+				}, 500);
+			});
+	</script>
+	<script type="text/javascript">
+	jQuery(document).ready(function(){
+		jQuery('#menu').slicknav();
+		
+	});
+	</script>
+	
+	<script type="text/javascript">
+    $(document).ready(function(){
+       
+        var $menu = $("#menuF");
+            
+        $(window).scroll(function(){
+            if ( $(this).scrollTop() > 100 && $menu.hasClass("default") ){
+                $menu.fadeOut('fast',function(){
+                    $(this).removeClass("default")
+                           .addClass("fixed transbg")
+                           .fadeIn('fast');
+                });
+            } else if($(this).scrollTop() <= 100 && $menu.hasClass("fixed")) {
+                $menu.fadeOut('fast',function(){
+                    $(this).removeClass("fixed transbg")
+                           .addClass("default")
+                           .fadeIn('fast');
+                });
+            }
+        });
+	});
+    //jQuery
+	</script>
+	<script>
+		/*menu*/
+		function calculateScroll() {
+			var contentTop      =   [];
+			var contentBottom   =   [];
+			var winTop      =   $(window).scrollTop();
+			var rangeTop    =   200;
+			var rangeBottom =   500;
+			$('.navmenu').find('a').each(function(){
+				contentTop.push( $( $(this).attr('href') ).offset().top );
+				contentBottom.push( $( $(this).attr('href') ).offset().top + $( $(this).attr('href') ).height() );
+			})
+			$.each( contentTop, function(i){
+				if ( winTop > contentTop[i] - rangeTop && winTop < contentBottom[i] - rangeBottom ){
+					$('.navmenu li')
+					.removeClass('active')
+					.eq(i).addClass('active');				
+				}
+			})
+		};
+		
+		$(document).ready(function(){
+			calculateScroll();
+			$(window).scroll(function(event) {
+				calculateScroll();
+			});
+			$('.navmenu ul li a').click(function() {  
+				$('html, body').animate({scrollTop: $(this.hash).offset().top - 80}, 800);
+				return false;
+			});
+		});		
+	</script>	
+	<script type="text/javascript" charset="utf-8">
+
+		jQuery(document).ready(function(){
+			jQuery(".pretty a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'normal',theme:'light_square',slideshow:3000, autoplay_slideshow: true, social_tools: ''});
+			
+		});
+	</script>
 	</body>
+	
 </html>
