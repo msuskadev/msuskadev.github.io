@@ -1,127 +1,568 @@
+<!doctype html>
+<!doctype html>
 <html>
 	<head>
-        <title>Hype During Development</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>chatbot.js - Creating Virtual Assistants in JavaScript - TechTalk SE III</title>
+
+		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/league.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
 	</head>
 	<body>
-        <div>
-            <img style="position: absolute; right: 50px; top: 30px;" src="./img/logo.svg"/>
-        </div>        
+		<div>
+            <img style="position: absolute; right: 50px; top: 30px; width:250px" src="./img/logo.png"/>
+        </div>  
 		<div class="reveal">
 			<div class="slides">
+				<section data-background="#ececec">
+					<section data-background="./img/intro.png" data-background-size="1350px"></section>
+				</section>
+				<section data-markdown 
+						data-separator="^\n\n\n"
+						data-separator-vertical="^\n\n"
+						data-separator-notes="^Note:"> 				
+					<textarea data-template>
+						## What is chatbot?
+						
+						> A computer program designed to simulate conversation with human users, especially over the Internet.
+
+						###### _Oxford Dictionary, 1990s_
+
+						Note:
+						* tell about the orign date as interesing fact
+					</textarea>			
+				</section>
+				<section data-background-video="./img/raising-hands.mp4" data-background-video-loop="true">
+					<h1>Question</h1>
+				</section>
+				<section data-background="./img/messanger-logo.png" data-background-size="400px" data-background-opacity="0.4">
+					<h1>300 000 active bots on Messenger</h1>					
+					<p style="text-align: right;"><h5>Facebook F8 2018 Conference<h5></p>
+					<aside class="notes">
+						Mostly those bots help business to be closer their clients or future clients. They help to get discounts,
+						be updated with the special offers and sales. 
+						They are also treated as first level support.  
+					</aside>
+				</section>
 				<section>
-                    <h1>Hype During Development</h1>
-                    <h4>Mieczysław Suska, Wrocław, 23.03.2018</h4>
-                </section>
-                <section class="present" data-background-image="img/new.png" data-background-size="500px">
-                    <h2>Trends in 2018</h2>
-                    <p class="fragment fade-up visible current-fragment" data-fragment-index="0">Blockchain</p>                    
-                    <p class="fragment fade-up visible current-fragment" data-fragment-index="1">Artificial Inteligence</p>                    
-                    <p class="fragment fade-up visible current-fragment" data-fragment-index="2">Functional programming in JS</p>
-                    <p class="fragment fade-up visible current-fragment" data-fragment-index="3">Progressive Web Apps</p>
-                    <p class="fragment fade-up visible current-fragment" data-fragment-index="4">Kotlin for Android</p>
-                    <p class="fragment fade-up visible current-fragment" data-fragment-index="5">Event Driven Model</p>
-                    <p class="fragment fade-up visible current-fragment" data-fragment-index="6">Digital Twins</p>                    
-                </section>
-                <section>
-                    <section><h2>Hype Driven Development</h2></section>
-                    <section>
-                        <h2>Definition of Hype Driven Development</h2><br>
-                        <div><p>Making decision about software architecture or technology stack based on inaccurate opinions, social media and in general on what
-                            is considered to be <b><span style="color: orangered">"HOT"</span></b>    
-                        </p></div>
-                    </section>
-                    <section>
-                        <h2>Recommended books</h2>
-                        <div>
-                            <img src="img/hdd-orly.jpg" style="height:300px">
-                            <img src="img/hdd_book.jpg" style="height:300px">
-                            <img src="img/buzzwordfirst-big.png" style="height:300px">
-                            <img src="img/shinynewthings-big.png" style="height:300px">
-                            <p class="fragment fade-up visible current-fragment" data-fragment-index="0">O'RLY Publisher</p>
-                        </div>
-                    </section>
-                    <section>
-                        <h3>Types of Hype Driven Development</h3>
-                        <img class="fragment fade-up visible current-fragment" data-fragment-index="1" src="img/smdd.png" style="border: 0px; height: 160px">
-                        <img class="fragment fade-up visible current-fragment" data-fragment-index="2" src="img/sodd.png" style="border: 0px; height: 160px">
-                        <img class="fragment fade-up visible current-fragment" data-fragment-index="3" src="img/cdd.png" style="border: 0px; height: 160px"><br>
-                        <img class="fragment fade-up visible current-fragment" data-fragment-index="4" src="img/pdd.png" style="border: 0px; height: 160px">                
-                        <img class="fragment fade-up visible current-fragment" data-fragment-index="5" src="img/lgdd.png" style="border: 0px; height: 160px">
-                    </section>                 
-                    <section>
-                        <h3>Examples of Hype Driven Development</h3>
-                        <img class="fragment fade-up visible current-fragment" data-fragment-index="1" src="img/jq_b_to_react.png" style="border: 0px; background: none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <img class="fragment fade-up visible current-fragment" data-fragment-index="2" src="img/db_to_nosql.png" style="border: 0px; background: none;"><br>
-                        <img class="fragment fade-up visible current-fragment" data-fragment-index="3" src="img/microservices-cubes.png" 
-                            style="border: 0px; height: 300px; background: none;">
-                    </section>
-                </section>
-                <section>
-                    <h2>Gartner Hype Cycle</h2>
-                    <img src="img/gartner_hype_cycle.png" style="background-color: white; border: 0px" />
-                </section>                
-                <section>
-                    <h1>No Software Religion</h1>
-                </section>
-                <section data-background-image="img/calculate.png" data-background-size="500px">
-                    <h1>Calculate initial cost</h1>
-                </section>
-                <section>
-                    <section data-background-image="img/question.png" data-background-size="500px">                    
-                        <h1>Answer questions</h1>    
-                    </section>
-                    <section data-background-image="img/question.png" data-background-size="500px">
-                        <h2>What is the problem I am trying to solve by adding this new technology to the stack?</h2>
-                    </section>
-                    <section data-background-image="img/question.png" data-background-size="500px">
-                        <h2>Will the use of this technology pay back the cost of the entrance curve and rewriting?</h2>
-                    </section>
-                    <section data-background-image="img/question.png" data-background-size="500px">
-                        <h2>What's the cost of convincing and training other team members?</h2>
-                        <h4 class="fragment fade-up visible current-fragment" data-fragment-index="1">Are my team members tend to hype?</h4>
-                        <h4 class="fragment fade-up visible current-fragment" data-fragment-index="2">Will they respond with enthusiasm or with skepticism?</h4>
-                        <h4 class="fragment fade-up visible current-fragment" data-fragment-index="3">Am I able to take up the role of Evangelist for specified technology?</h4>                        
-                    </section>
-                    <section data-background-image="img/question.png" data-background-size="500px">
-                        <h2>Do I know how to measure and analyze the risk of adding new piece of technology to the stack?</h2>
-                    </section>
-                </section>
-                <section data-background-image="img/lab.png" data-background-size="500px">
-                    <h1>Test and research</h1>    
-                </section>                
-                <section>
-                    <section data-background-image="img/lab.png" data-background-size="500px">
-                        <h2>Build prototype...</h2>
-                    </section>
-                    <section data-background-image="img/lab.png" data-background-size="500px">
-                        <h2>... and if possible let someone from your team do the same with the competitive tool</h2>
-                    </section>
-                </section>
-                <section data-background-image="img/lab.png" data-background-size="500px">
-                    <h2>Let the team analyze <u>PROS</u> and <u>CONS</u></h2>
-                </section>
-                <section data-background-image="img/lab.png" data-background-size="500px">
-                    <h2>Organize hackathon</h2>
-                </section>
-                <section>                    
-                    <section data-background-image="img/lab.png" data-background-size="500px"><h2>Use new technology in small project...</h2></section>
-                    <section data-background-image="img/lab.png" data-background-size="500px"><h2>deploy it to production environment...</h2></section>
-                    <section data-background-image="img/lab.png" data-background-size="500px"><h2>and be ready...</h2></section>                        
-                    <section data-background-image="img/lab.png" data-background-size="500px">
-                        <h1>to admit the decision were <u>wrong</u></h1>
-                    </section>
-                </section>
-                <section>                    
-                    <h2>"Technology have to solve problems, not create them"</h2>      
-                    <div style="width: 100%; text-align: right"><h6><i>Someone from the Internet</i></h6></div>          
-                </section>
+					<section id="fragment_samples">
+						<h2>Domino's Pizza ChatBot</h2>
+						<img src="img/dominos-chatbot-pizzabot.png" style="width: 300px; border: 0px;">
+					</section>
+					<section id="fragment_samples">			
+						<h2>Levi's Indigo ChatBot</h2>			
+						<img src="img/levis-chatbot-1.png" style="width: 650px; border: 0px;">
+					</section>
+					<section id="fragment_samples">						
+						<h2>Realty ChatBot</h2>
+						<img src="img/realty-chatbot.png" style="border: 0px;">
+					</section>
+					<section id="fragment_samples">
+						<h2>Buoy Health ChatBot</h2>			
+						<img src="img/buoy-health.png" style="width: 850px; border: 0px;">
+					</section>
+					<section id="fragment_samples">
+						<h2>DoNotPay Chatbot</h2>		
+						<img src="img/do-not-pay-chatbot-1.png" style="width: 850px; border: 0px;">
+					</section>
+					<section id="fragment_samples">
+						<h2>Milla ChatBot</h2>
+						<img src="img/milla.png" style="width: 1000px; border: 0px;">
+					</section>
+					<section id="fragment_samples">			
+						<h2>KrEdytka Chatbot</h2>			
+						<img src="img/kredytka.png" style="width: 650px; border: 0px;">
+					</section>
+					<section id="fragment_samples">						
+						<h2>InPost MAT ChatBot</h2>
+						<img src="img/inpost.png" style="width: 300px; border: 0px;">
+					</section>
+					<section id="fragment_samples">
+						<h2>IKEA ChatBot</h2>			
+						<img src="img/ikea.PNG" style="width: 400px; border: 0px;">
+					</section>
+					<section id="fragment_samples">
+						<h2>Tinder Bot</h2>					
+						<img src="./img/tinder-bot.PNG" style="width: 600px; border: 0px;">
+						<aside class="notes">
+							Data scientist Jeffrey Li designed an algorithm to access his Tinder profile and swipe on 100 women every day. That bot decided whether or not it thought Li would find each woman attractive based on the Google images of women he used to train it.
+						</aside>
+					</section>
+				</section>
+				<section>
+					<section id="fragment_history">
+						<h1>History of chatbots</h1>					
+						<img src="./img/history_of_chatbots.jpeg">		
+					</section>
+					<section id="fragment_history">
+						<h2>Eliza - 1966</h2>					
+						<img src="./img/eliza.jpg" style="border: 0px;"><br>
+						<a href="https://www.eclecticenergies.com/ego/eliza">https://www.eclecticenergies.com/ego/eliza</a>
+						<aside class="notes">
+							It was programm written at MIT, it simulated conversation with psychoanalyst
+						</aside>	
+					</section>
+					<section id="fragment_history">
+						<h2>Parry - 1972</h2>											
+						<a href="http://www.cs.cmu.edu/afs/cs/project/ai-repository/ai/areas/classics/parry/">http://www.cs.cmu.edu/afs/cs/project/ai-repository/ai/areas/classics/parry/</a>
+						<aside class="notes">
+							Written in LISP - simulate a person with paranoid schizophrenia
+						</aside>	
+					</section>
+					<section id="fragment_history">
+						<h2>Dr. Sbaitso - 1992</h2>					
+						<img src="./img/db_sbaisto.png" style="border: 0px; width: 800px"><br>						
+						<aside class="notes">
+							1-st time a bot uses voice!!!
+							Simulated conversation with psychologist, but the true intention was to showto showcase the digitized voices the cards
+							Produced by Sound Blaster
+						</aside>	
+					</section>
+					<section id="fragment_history">
+						<h2>Eugene Goostman - 2001</h2>					
+						<img src="./img/eugene_goostman.jpg" style="border: 0px; width: 800px"><br>						
+						<aside class="notes">
+							personality of 13 yo boy
+							On 7 June 2014, at a contest marking the 60th anniversary of Turing's death, 33% of the event's judges thought that Goostman was human; the event's organiser Kevin Warwick considered it to have passed Turing's test as a result, per Turing's prediction in his 1950 paper Computing Machinery and Intelligence, that by the year 2000, machines would be capable of fooling 30% of human judges after five minutes of questioning.
+						</aside>	
+					</section>
+					<section id="fragment_history">
+						<h2>Apple Siri - 2011</h2>					
+						<img src="./img/siri.jpg" style="border: 0px; width: 800px"><br>						
+					</section>
+					<section id="fragment_history">
+						<h2>Amazon Alexa - 2015</h2>					
+						<img src="./img/alexa.png" style="border: 0px; width: 800px"><br>												
+					</section>
+					<section id="fragment_history">
+						<h2>Facebook Messenger as a platform for bots - 2016</h2>					
+						<img src="./img/messanger-logo.png" style="border: 0px; width: 450px"><br>
+						<aside class="notes">
+							Messenger was developerd in 2008, but in 2016 Facebook run a platform where bot could be added 
+							Currently leading platform for bots!!!
+						</aside>											
+					</section>
+					<section id="fragment_history">
+						<h2>Google Meena - 2020</h2>
+						<p class="fragment fade-in-then-semi-out">Google says Meena can talk about pretty much anything</p>
+						<p class="fragment fade-in-then-semi-out">Meena is trained on public domain social media conversations</p>
+						<p class="fragment fade-in-then-semi-out">Total data comprised of 40B words and 341 GB of text data</p>
+						<p class="fragment fade-in-then-semi-out">Model training takes 30 days (2048 TPU cores machine)</p>
+						<p class="fragment fade-in-then-semi-out">Not yet released - models have to be vetted for safety and bias - Lessons learned from Microsoft Tay Chatbot</p>					
+						<aside class="notes">
+							* TPU - Tensorflow processing unit - machine tailored for machine learning and TensorFlow library
+							* models have to be vetted for safety and bias -  modele muszą być sprawdzone pod kątem bezpieczeństwa i stronniczości
+							* Microsoft released its chatbot Tay on Twitter in 2016, it started spewing racist, misogynistic ( nienawiść albo silne uprzedzenie w stosunku do płci żeńskiej) invective within hours.
+							Tay was shut down after 16 hours 
+						</aside>
+					</section>
+				</section>
+				<section>
+					<section id="fragment_market_size">
+						<h3>Chatbot market size - 2019</h3>
+						<h1>US $2.6 billion</h1>
+					</section>
+					<section id="fragment_market_size">
+						<h3>Chatbot market size - 2024</h3>
+						<h1>US $9.4 billion</h1>						
+					</section>
+				</section>
+				<section data-background="./img/rasa.png" data-background-opacity="0.3">
+					<h1>rasa</h1>
+					<a href="https://rasa.com/">https://rasa.com/</a>
+					<aside class="notes">
+						Rasa Open Source is a machine learning framework to automate text- and voice-based assistants.
+					</aside>
+				</section>
+				<section data-background="./img/dialogflow.png" data-background-opacity="0.3">
+					<h1>Google Dialogflow</h1>
+					<a href="https://dialogflow.com/">https://dialogflow.com/</a>
+				</section>
+				<section data-background="./img/watson.png" data-background-opacity="0.3">
+					<h1>IBM Watson</h1>
+					<a href="https://www.ibm.com/watson/how-to-build-a-chatbot">https://www.ibm.com/watson/how-to-build-a-chatbot</a>
+				</section>
+				<section data-background="./img/amazonlex.png" data-background-opacity="0.3">
+					<h1>Amazon LEX</h1>
+					<a href="https://aws.amazon.com/lex">https://aws.amazon.com/lex</a>
+				</section>
+				<section data-background="./img/ms_bot_framework.png" data-background-opacity="0.3">
+					<h1>Microsoft Bot Framework</h1>
+					<a href="https://dev.botframework.com/">https://dev.botframework.com/</a>					
+				</section>
+				<section data-background="#ffffff">
+					<section data-background="./img/BotFrameworkDiagram.png" data-background-size="1400px" data-background-opacity="1">					
+					</section>
+				</section>
+				<section>
+					<h1>Hello Echo Bot</h1>					
+				</section>
+				<section data-markdown="./markdowns/echo-bot-code.md">
+				</section>
+				<section>
+					<h2>How bots work</h2>
+					<img src="img/how_bot_works.png" style="border: 0px; width: 1000px">					
+				</section>
+				<section>
+					<section>
+						<h2>TurnContext Object</h2>
+						<a href="https://docs.microsoft.com/en-us/javascript/api/botbuilder-core/turncontext?view=botbuilder-ts-latest">Documentation</a><br>
+						<table>
+							<tr><td><b>Method:</b></td><td style="width: 100px;">&nbsp;</td><td><b>Properties:</b></td></tr>
+							<tr><td>getMentions(Partial<Activity>)</td><td>&nbsp;</td><td><span style="color: greenyellow;">activity</span></td></tr>
+							<tr><td>onDeleteActivity(DeleteActivityHandler)</td><td>&nbsp;</td><td>adapter</td></tr>
+							<tr><td>removeRecipientMention(Partial<Activity>)</td><td>&nbsp;</td><td>responded</td></tr>
+							<tr><td><span style="color: greenyellow;">sendActivity(string | Partial<Activity>, string, string)</span></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+							<tr><td><span style="color: greenyellow;">sendActivities(Partial<Activity>[])</span></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+						</table>					
+						<aside class="notes">
+							* Besides method like: getMentions, removeRecipientMention or the most popular sendActivity and sendActivities
+							* we have properties like activity, adapter or responded						
+						</aside>
+					</section>
+					<section>
+						<h2>TurnContext activity</h2>
+						<img src="img/user-bot.png" style="border: 0px; width: 1100px">					
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>How to run bot?</h1>
+					</section>
+					<section>
+						<h2>Bot Framework Emulator</h2>
+						<a href="https://github.com/Microsoft/BotFramework-Emulator">https://github.com/Microsoft/BotFramework-Emulator</a>
+						<img src="img/emulator.PNG" style="border: 0px; width: 1000px;">
+					</section>
+				</section>			
+				<section data-background="./img/sheldon.gif" data-background-opacity="0.6">
+					<h1>DEMO</h1>					
+				</section>
+				<section>					
+					<h2>Activity Handler Class</h2>
+					<a href="https://docs.microsoft.com/en-us/javascript/api/botbuilder-core/activityhandler?view=botbuilder-ts-latest">Documentation</a><br><br>
+					<table style="font-size: 36px;">
+						<tr><td><b>Methods</b></td><td></td></tr>
+						<tr><td>onDialog(BotHandler)</td><td></td></tr>
+						<tr><td>onMembersAdded(BotHandler)</td><td></td></tr>
+						<tr><td>onMembersRemoved(BotHandler)</td><td></td></tr>
+						<tr><td>onMessage(BotHandler)</td><td></td></tr>
+						<tr><td>onReactionsAdded(BotHandler)</td><td></td></tr>
+						<tr><td>onReactionsRemoved(BotHandler)</td><td></td></tr>
+						<tr><td>run(TurnContext)</td><td></td></tr>
+					</table>
+					<aside class="notes">
+						* This provides an extensible class for handling incoming activities in an event-driven way.
+						* ondialog - Registers an activity event handler for the dialog event, emitted as the last event for an incoming activity.
+						* onMembersAdded - Registers an activity event handler for the members added event, emitted for any incoming conversation update activity that includes members added to the conversation.
+						* run - Called to initiate the event emission process.
+
+						IMPORTANT!
+						If multiple handlers are registered for an event, they are run in the order in which they were registered.  
+					</aside>
+				</section>
+				<section data-markdown="./markdowns/advanced-bot-code.md"></section>
+				<section data-markdown="./markdowns/advanced-bot-code-server.md"></section>
+				<section data-background="./img/advanced.gif" data-background-opacity="0.6" data-background-size="800px">					
+					<h1>Demo</h1>			
+				</section>
+				<section>
+					<section>				
+						<h1>Card and Message<br>Factory</h1>
+					</section>
+					<section>				
+						<h2>Card Factory</h2>
+						<a href="https://docs.microsoft.com/en-us/javascript/api/botbuilder-core/cardfactory?view=botbuilder-ts-latest">Documentation</a><br><br>
+						<table style="font-size: 36px;">
+							<tr><td><b>Methods</b></td><td></td></tr>
+							<tr><td><span style="color: greenyellow;">animationCard</span>(string, string | MediaUrl[], string | CardAction[], Partial<AnimationCard>)</td><td></td></tr>
+							<tr><td><span style="color: greenyellow;">audioCard</span>(string, string | MediaUrl[], string | CardAction[], Partial<AudioCard>)</td><td></td></tr>
+							<tr><td><span style="color: greenyellow;">heroCard</span>(string, string | CardImage[], string | CardAction[], Partial<HeroCard>)</td><td></td></tr>
+							<tr><td><span style="color: greenyellow;">oauthCard</span>(string, string, string, string, TokenExchangeResource)</td><td></td></tr>
+							<tr><td><span style="color: greenyellow;">receiptCard</span>(ReceiptCard)</td><td></td></tr>
+							<tr><td><span style="color: greenyellow;">thumbnailCard</span>(string, string | CardImage[], string | CardAction[], Partial<ThumbnailCard>)</td><td></td></tr>
+							<tr><td><span style="color: greenyellow;">videoCard</span>(string, string | MediaUrl[], string | CardAction[], Partial<VideoCard>)</td><td></td></tr>								
+						</table>
+						<aside class="notes">
+							* CardFactory - Provides methods for formatting the various card types a bot can return. All of these functions return an Attachment object, which can be added to an existing activity's attachments collection directly or passed as input to one of the MessageFactory methods to generate a new activity.
+						</aside>
+					</section>
+					<section data-markdown="./markdowns/card-factory-video-card.md"></section>
+					<section>
+						<h2>CardFactory - Audio card</h2>
+						<img src="./img/audiocard.png" style="border: 0px;">
+					</section>
+					<section>				
+						<h2>Message Factory</h2>
+						<a href="https://docs.microsoft.com/en-us/javascript/api/botbuilder-core/messagefactory?view=botbuilder-ts-latest">Documentation</a><br><br>
+						<table style="font-size: 36px;">
+							<tr><td><b>Methods</b></td><td></td></tr>
+							<tr><td><span style="color: greenyellow;">attachment</span>(Attachment, string, string, InputHints | string)</td><td></td></tr>
+							<tr><td><span style="color: greenyellow;">carousel</span>(Attachment[], string, string, InputHints | string)</td><td></td></tr>
+							<tr><td><span style="color: greenyellow;">contentUrl</span>(string, string, string, string, string, InputHints | string)</td><td></td></tr>
+							<tr><td><span style="color: greenyellow;">list</span>(Attachment[], string, string, InputHints | string)</td><td></td></tr>
+							<tr><td><span style="color: greenyellow;">suggestedActions</span>(string | CardAction[], string, string, InputHints | string)</td><td></td></tr>
+							<tr><td><span style="color: greenyellow;">text</span>(string, string, InputHints | string)</td><td></td></tr>
+						</table>
+						<aside class="notes">
+							* MessageFactory - A set of utility functions to assist with the formatting of the various message types a bot can return.
+						</aside>
+					</section>
+					<section data-markdown="./markdowns/message-factory-attachment.md"></section>
+					<section>
+						<h2>MessageFactory - attachment method</h2>
+						<img src="./img/hero-card.png" style="border: 0px;">
+						<aside class="notes">
+							* Hero cards tend to have one dominant, full-width image. Channels typically render the card's text and buttons below the image.
+						</aside>
+					</section>
+					<section data-markdown="./markdowns/message-factory-carousel.md"></section>
+					<section>
+						<h2>MessageFactory - carousel method</h2>
+						<img src="./img/carousel.png" style="border: 0px;">
+					</section>
+					<section data-markdown="./markdowns/message-factory-contenturl.md"></section>
+					<section>
+						<h2>MessageFactory - contentUrl method</h2>
+						<img src="./img/content-url.PNG" style="border: 0px;">
+					</section>
+					<section data-markdown="./markdowns/message-factory-list.md"></section>
+					<section>
+						<h2>MessageFactory - list method</h2>
+						<img src="./img/list.PNG" style="border: 0px; height: 600px;">
+					</section>
+					<section data-markdown="./markdowns/message-factory-suggested-actions.md"></section>
+					<section>
+						<h2>MessageFactory - Suggested Actions method</h2>
+						<img src="./img/suggested_actions.PNG" style="border: 0px; height: 250px;">
+					</section>
+					<section data-background="./img/markdown.png" data-background-size="800px" data-background-opacity="0.3">
+						<h2>MessageFactory - text method</h2>
+						<p class="fragment fade-in-then-semi-out">Message Factory supports MARKDOWN formatting</p>						
+					</section>					
+				</section>
+				<section data-background="./img/demotime.gif" data-background-opacity="0.6">					
+					<h1>Demo time!</h1>			
+				</section>			
+				<section>
+					<section>
+						<h1>Generations<br>of<br>Chatbots</h1>						
+					</section>
+					<section>
+						<h2>I vs II Generation of Chatbots</h2>
+						<img src="./img/I_vs_II_generation.PNG" style="border: 0px; width: 1200px">
+					</section>
+					<section>
+						<h2>Challenges of II Generation Chatbots</h2>
+						<p class="fragment fade-in-then-semi-out">Varieties in the way people type their message can make it hard to understand their intention</p>						
+						<p class="fragment fade-in-then-semi-out">The different ways in which humans talk can also be difficult for a chatbot to understand. For example, the user may use slang, misspell words and short form or acronyms.</p>						
+						<p class="fragment fade-in-then-semi-out">Human beings are random and user behavior is controlled by emotions and moods</p>						
+						<aside class="notes">
+							ad 1.: Chatbots must be able to deal with both long and short sentences<br>
+							ad 3: users may quickly change their minds. After initially asking for a suggestion, they might switch to wanting to give a command instead
+						</aside>
+					</section>
+					<section>
+						<h1>73%</h1>
+						<h3>of Americans said they wouldn’t use a company’s chatbot after a bad experience</h3>
+						<h5><span>DigitasLBi report</span></h5>
+					</section>					
+				</section>
+				<section>
+					<section>
+						<h1>Dialog library</h1>
+						<a href="https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-dialog?view=azure-bot-service-4.0">Documentation</a>
+						<aside class="notes">
+							* Dialogs are structures in your bot that act like functions in your bot's program; each dialog is designed to perform a specific task, in a specific order. You can specify the order of individual dialogs to guide the conversation, and invoke them in different ways - sometimes in response to a user, sometimes in response to some outside stimuli, or from other dialogs.
+						</aside>
+					</section>
+					<section>
+						<h2>Dialog library</h2>
+						<img src="./img/bot-builder-dialog-classes.png" style="border: 0px; width: 850px">
+						<aside class="notes">
+							* The basic prompts can interpret natural language input, such as "ten" or "a dozen" for a number, or "tomorrow" or "Friday at 10am" for a date-time.
+						</aside>
+					</section>
+					<section>
+						<h2>Waterfall Dialog</h2>
+						<img src="./img/waterfall.png" style="border: 0px; width: 600px">						
+					</section>
+					<section data-markdown="./markdowns/waterfall-dialog-create.md"></section>
+					<section data-markdown="./markdowns/waterfall-dialog-create-methods.md"></section>
+					<section data-markdown="./markdowns/waterfall-dialog-run-continue-end.md"></section>					
+					<section>
+						<img src="img/flybot-logo.png" style="border: 0px;"><h1>FlyBot</h1>
+					</section>
+					<section>
+						<h1>kiwi.com API</h1>
+					</section>
+					<section data-background="./img/demo-plane.gif" data-background-opacity="0.6">
+						<h1>Demo</h1>
+					</section>					
+				</section>
+				<section>					
+					<section data-background-video="./img/AdaptiveIntroVideo.mp4"></section>
+					<section data-markdown="./markdowns/adaptive-cards.md"></section>
+					<section>
+						<h2>Adaptive Card</h2>
+						<img src="img/adaptive-card.png" style="border: 0px;">
+					</section>
+					<section data-background="./img/adaptivecards-site.png" data-background-opacity="0.4">
+						<a href="https://adaptivecards.io/" style="font-size: 84px; background-color: black;">https://adaptivecards.io</a>
+					</section>
+					<section>				
+						<h2>Adaptive Cards limitations</h2>
+						<p class="fragment fade-in-then-semi-out">Microsoft Teams Application doesn't support Animated and Video Card</p>						
+						<p class="fragment fade-in-then-semi-out">Channel conversation post size - Approximately 28 KB per post</p>											
+					</section>
+					<section data-background="./img/demo-plane.gif" data-background-opacity="0.6">
+						<h1>Demo - adaptive cards</h1>
+					</section>	
+				</section>
+				<section>
+					<section data-background-video="./img/flybot-2.0.mp4" data-background-opacity="0.6">						
+						<h1>FlyBot 2.0</h1>
+					</section>
+					<section data-background="./img/luis.png" data-background-opacity="0.4">
+						<h1>LUIS</h1>						
+						<a href="https://luis.ai/">https://luis.ai/</a>
+						<aside class="notes">
+							* Language Understanding (LUIS) is a cloud-based API service that applies custom machine-learning intelligence to a user's conversational, natural language text to predict overall meaning, and pull out relevant, detailed information.
+						</aside>
+					</section>
+					<section data-markdown="./markdowns/luis.md"></section>
+					<section data-markdown="./markdowns/luis-code.md"></section>
+					<section data-background-video="./img/flybot-2.0.mp4" data-background-opacity="0.6">						
+						<h1>FlyBot 2.0 - Demo</h1>
+					</section>
+					<section data-markdown="./markdowns/luis-limitations.md"></section>
+				</section>
+				<section>
+					<section>						
+						<h1>How to deploy bot?</h1>
+					</section>
+					<section>						
+						<h2>For development purposes</h2>
+						<h3>Bot Framework Emulator</h3>
+						<img src="img/emulator.PNG" style="border: 0px; width: 1000px;">
+					</section>
+					<section>						
+						<h2>For development purposes</h2>
+						<h3>NGROK + Azure Bot Channel Registration</h3>
+						<img src="img/dev_flow.png" style="border: 0px; width: 1500px;">
+					</section>
+					<section>						
+						<h2>Production Environment</h2>
+						<h3>Azure Web App Bot</h3>
+						<img src="img/web_app_bot.png" style="border: 0px; width: 1000px;">
+					</section>
+					<section>						
+						<h2>Production Environment</h2>						
+						<img src="img/prod_env.png" style="border: 0px; width: 1500px;">
+					</section>
+					<section>						
+						<h2>Bot Channel Registration</h2>						
+						<img src="img/bot-channels-registration.png" style="border: 0px;">
+					</section>
+					<section>						
+						<h2>Bot Channel Registration</h2>
+						<img src="./img/connect_to_channels.png" style="border: 0px; width: 1200px;">						
+					</section>
+					<section>						
+						<h2>Bot Channel Registration</h2>
+						<img src="./img/channels.jpg" style="width: 1000px;">
+					</section>
+				</section>				
+				<section>
+					<section>						
+						<h1>Extras</h1>	
+					</section>
+					<section data-background="./img/qna_maker.png" data-background-opacity="0.6">					
+						<h1>QnA Maker</h1>
+						<a href="https://www.qnamaker.ai/" style="font-size: 64px;">Documentation</a>
+					</section>
+					<section data-background="./img/skills.png" data-background-opacity="0.4">				
+						<h1>Skills</h1>
+						<a href="https://microsoft.github.io/botframework-solutions/overview/virtual-assistant-solution/" style="font-size: 64px;">Documentation</a>
+						<aside class="notes">
+							Skills are themselves Bots, invoked remotely and a Skill developer template (.NET, TS) is available to facilitate creation of new Skills.
+						</aside>
+					</section>
+					<section>				
+						<h2>Skills</h2>
+						<table style="font-size: 36px;">							
+							<tr><td>Calendar Skill</td><td>IT Service Managment (ITSM) Skill*</td></tr>
+							<tr><td>Email Skill</td><td>Music Skill*</td></tr>
+							<tr><td>Point Of Interest Skill</td><td>News Skill*</td></tr>
+							<tr><td>To Do Skill</td><td>Phone Skill*</td></tr>
+							<tr><td>Automotive Skill*</td><td>Restaurant Booking Skill*</td></tr>
+							<tr><td>Bing Search Skill*</td><td>Weather Skill*</td></tr>
+						</table>
+						<aside class="notes">
+							Calendar, Email - uses MS Graph, Gmail, <br>
+							Point of Interest - FourSquare, Azure Maps <br>
+							Bing search - Bing Search Cognitive Service <br>
+							Music Skill - Spotify API
+							News - Bing News Cognitive Services 
+						</aside>
+					</section>
+					<section>				
+						<h2>Skills limitations</h2>
+						<table style="font-size: 36px;">							
+							<tr><td><b><span style="color: greenyellow;">Supported Languages</span></b></td></tr>
+							<tr><td>English</td></tr>
+							<tr><td>French</td></tr>
+							<tr><td>Italian</td></tr>
+							<tr><td>German</td></tr>
+							<tr><td>Spanish</td></tr>
+							<tr><td>Chinese (simplified)</td></tr>
+						</table>
+					</section>
+					<section data-background="./img/composer.png" data-background-opacity="0.4">					
+						<h1>Bot Framework Composer</h1>
+						<a href="https://docs.microsoft.com/en-us/composer/" style="font-size: 64px;">Documentation</a>
+						<aside class="notes">
+							Bot Framework Composer is an open-source visual authoring canvas for developers and multidisciplinary teams to build bots. Composer integrates language understanding services such as LUIS and QnA Maker and allows sophisticated composition of bot replies using Language Generation. Composer is available as a desktop application as well as a web-based component.Services 
+						</aside>
+					</section>				
+				</section>
+				<section data-background="#ececec">
+					<section data-background="./img/intro.png" data-background-size="1350px"></section>
+				</section>					
 			</div>
 		</div>
+
 		<script src="js/reveal.js"></script>
+
 		<script>
-			Reveal.initialize();
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				hash: true,
+				width: "100%",
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/highlight/highlight.js' },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
 		</script>
 	</body>
 </html>
