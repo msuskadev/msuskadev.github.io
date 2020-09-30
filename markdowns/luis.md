@@ -1,12 +1,12 @@
 ## How does LUIS.ai work?
 
 
-### _Question: "Book me a flight to Cairo"_
+### _Question: "Book me a flight to Paris"_
 
 
 ```javascript
 {
-    "query": "Book me a flight to Cairo",
+    "query": "Book me a flight to Paris",
     "prediction": {
         "topIntent": "BookFlight",
         "intents": {
@@ -28,7 +28,7 @@
         },
         "entities": {
             "Location": [
-                "Cairo"
+                "Paris"
             ]
         }
     }

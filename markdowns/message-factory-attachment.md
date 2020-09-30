@@ -9,4 +9,6 @@ const message = MessageFactory.attachment(
         ['Buy']
      )
 );
+
+await context.sendActivity(message);
 ```
