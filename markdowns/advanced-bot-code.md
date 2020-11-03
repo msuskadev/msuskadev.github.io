@@ -1,14 +1,14 @@
-## Advanced Echo Bot
+## FlyBot
 
 ```javascript
 import { ActivityHandler, MessageFactory } from 'botbuilder';
 
-export class EchoBot extends ActivityHandler {
+export class FlyBot extends ActivityHandler {
     constructor() {
         super();
         
         this.onMessage(async (context, next) => {
-            const replyText = `Advanced echo: ${ context.activity.text }`;
+            const replyText = `You said: ${ context.activity.text }`;
             await context.sendActivity(MessageFactory.text(replyText));            
             await next();
         });
@@ -18,7 +18,7 @@ export class EchoBot extends ActivityHandler {
             if (!membersAdded) {
                 return;
             }
-            const welcomeText = 'Hello and welcome to TechTalk Special Edition!';
+            const welcomeText = 'Hello and welcome to JS Poland 2020!';
             for (const member of membersAdded) {
                 if (member.id !== context.activity.recipient.id) {
                     await context.sendActivity(MessageFactory.text(welcomeText, welcomeText));

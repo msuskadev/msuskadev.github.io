@@ -1,5 +1,5 @@
 ## LUIS.ai limitations
-* LUIS fully supports only **7 languages**:
+* LUIS fully supports only <span style="color:#FF5E99">**7 languages**</span>:
     * English (US), 
     * French (FR), 
     * German, 

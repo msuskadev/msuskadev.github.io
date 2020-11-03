@@ -1,4 +1,4 @@
-## Echo bot
+## Hello ~~world~~ bot
 
 ```javascript
 import * as resify from 'restify';
@@ -14,7 +14,7 @@ const adapter = new BotFrameworkAdapter({
 
 server.post('/api/messages', (req, res) => {
     adapter.processActivity(req, res, async (context) => { 
-        await context.sendActivity(`Echo: ${context.activity.text}`);
+        await context.sendActivity(`You said: ${context.activity.text}`);
     });
 });
 

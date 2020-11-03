@@ -1,1 +1,1 @@
-# Hello ~~World~~ Echo Bot!
+# Hello ~~World~~ Bot!

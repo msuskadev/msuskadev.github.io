@@ -1,10 +1,12 @@
 
-## Advanced Echo Bot - Server
+## FlyBot - Server
 
 ```javascript
 import * as resify from 'restify';
 import { BotFrameworkAdapter } from 'botbuilder';
-import { EchoBot } from './bot/echo-bot';
+import { FlyBot } from './bot/fly-bot';
+
+const flyBotPort = process.env.FlyBotPort || 3900; 
 
 const server = resify.createServer();
 const adapter = new BotFrameworkAdapter({
@@ -12,14 +14,14 @@ const adapter = new BotFrameworkAdapter({
     appPassword: process.env.MicrosoftAppPassword
 });
 
-const echoBot = new EchoBot();
+const flyBot = new FlyBot();
 server.post('/api/messages', (req, res) => {
     adapter.processActivity(req, res, async (context) => { 
-        await echoBot.run(context);
+        await flyBot.run(context);
     });
 });
 
-server.listen(process.env.EchoBotPort, () => {
-    console.log(`Server is listening on port ${echoBotPort}`);
+server.listen(process.env.FlyBotPort, () => {
+    console.log(`Server is listening on port ${flyBotPort}`);
 });
 ```
