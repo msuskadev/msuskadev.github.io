@@ -17,9 +17,9 @@ export class FlyBot extends ActivityHandler {
         };
 
         this.qnaMaker = new QnAMaker({
-            knowledgeBaseId: 'Generated QnA Marker Knowledge Base ID',
-            endpointKey: 'Generated QnA Marker Endpoint Key',
-            host: 'Generated QnA Marker Host'
+            knowledgeBaseId: 'Generated QnA Maker Knowledge Base ID',
+            endpointKey: 'Generated QnA Maker Endpoint Key',
+            host: 'Generated QnA Maker Host'
         });
 
 
