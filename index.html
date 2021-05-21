@@ -1,242 +1,147 @@
-<!doctype html>
-<!doctype html>
+<!DOCTYPE HTML>
+<!--
+	Big Picture by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
 	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-		<title>chatbot.js - Creating Virtual Assistants in JavaScript - JS Poland 2020</title>
-
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/league.css">
-
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/monokai.css">
-
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+		<title>Dryx - Sebastian Dryka</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-	<body>
-		<div>
-            <img style="position: absolute; right: 50px; top: 30px; z-index: 100" src="./img/js-poland-logo.png"/>
-        </div>  
-		<div class="reveal">
-			<div class="slides">
-				<section>					
-					<section data-background="./img/first-page.png" data-background-size="1350px"></section>
-				</section>													
-				<section>
-					<section id="fragment_history">
-						<h1>History of chatbots</h1>					
-						<img src="./img/history_of_chatbots.jpeg">		
-					</section>
-					<section data-markdown 
-						data-separator="^\n\n\n"
-						data-separator-vertical="^\n\n"
-						data-separator-notes="^Note:"> 				
-						<textarea data-template>
-							## What is chatbot?
-							
-							> A computer program designed to simulate conversation with human users, especially over the Internet.
+	<body class="is-preload">
 
-							###### _Oxford Dictionary, 1990s_
+		<!-- Header -->
+			<header id="header">
+				<span class="logo">Dryx</span>				
+				<nav>
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#one">Kim jesteśmy</a></li>
+						<li><a href="#two">Oferta</a></li>
+						<li><a href="#work">Realizacje</a></li>
+						<li><a href="#contact">Kontakt</a></li>
+					</ul>
+				</nav>
+			</header>
 
-							Note:
-							* tell about the orign date as interesing fact
-						</textarea>			
-					</section>
-					<section id="fragment_history">
-						<h2>Eliza - 1966</h2>					
-						<img src="./img/eliza.jpg" style="border: 0px;"><br>
-						<a href="https://www.eclecticenergies.com/ego/eliza">https://www.eclecticenergies.com/ego/eliza</a>						
-					</section>
-					<section id="fragment_history">
-						<h2>Dr. Sbaitso - 1992</h2>					
-						<img src="./img/db_sbaisto.png" style="border: 0px; width: 800px"><br>												
-					</section>
-					<section id="fragment_history">
-						<h2>Eugene Goostman - 2001</h2>					
-						<img src="./img/eugene_goostman.jpg" style="border: 0px; width: 800px"><br>												
-					</section>
-					<section id="fragment_history">
-						<h2>Apple Siri - 2011</h2>					
-						<img src="./img/siri.jpg" style="border: 0px; width: 800px"><br>						
-					</section>
-					<section id="fragment_history">
-						<h2>Amazon Alexa - 2015</h2>					
-						<img src="./img/alexa.png" style="border: 0px; width: 800px"><br>												
-					</section>
-					<section id="fragment_history">
-						<h2>Facebook Messenger as a platform for bots - 2016</h2>					
-						<img src="./img/messanger-logo.png" style="border: 0px; width: 450px"><br>																	
-					</section>
-					<section data-background="./img/messanger-logo.png" data-background-size="400px" data-background-opacity="0.4">
-						<h1>300 000 active bots on Messenger</h1>					
-						<p style="text-align: right;"><h5>Facebook F8 2018 Conference<h5></p>
-					</section>
-					<section id="fragment_history">
-						<h1>Google Meena - 2020</h1>
-						<p style="text-align: right;"><h5>Conversational Agent that Can Chat About…Anything</h5></p>						
-					</section>
-				</section>				
-				<section>
-					<section id="fragment_market_size">
-						<h3>Chatbot market size - 2019</h3>
-						<h1>US $2.6 billion</h1>
-						<h6><a href="https://www.businessinsider.com/chatbot-market-stats-trends">https://www.businessinsider.com/chatbot-market-stats-trends</a></h6>
-					</section>
-					<section id="fragment_market_size">
-						<h3>Chatbot market size - 2024</h3>
-						<h1>US $9.4 billion</h1>
-						<h6><a href="https://www.businessinsider.com/chatbot-market-stats-trends">https://www.businessinsider.com/chatbot-market-stats-trends</a></h6>
-					</section>
-				</section>
-				<section data-background="./img/rasa.png" data-background-opacity="0.3">
-					<h1>rasa</h1>
-					<a href="https://rasa.com/">https://rasa.com/</a>
-					<aside class="notes">
-						Rasa Open Source is a machine learning framework to automate text- and voice-based assistants.
-					</aside>
-				</section>
-				<section data-background="./img/dialogflow.png" data-background-opacity="0.3">
-					<h1>Google Dialogflow</h1>
-					<a href="https://dialogflow.com/">https://dialogflow.com/</a>
-				</section>
-				<section data-background="./img/watson.png" data-background-opacity="0.3">
-					<h1>IBM Watson</h1>
-					<a href="https://www.ibm.com/watson/how-to-build-a-chatbot">https://www.ibm.com/watson/how-to-build-a-chatbot</a>
-				</section>
-				<section data-background="./img/amazonlex.png" data-background-opacity="0.3">
-					<h1>Amazon LEX</h1>
-					<a href="https://aws.amazon.com/lex">https://aws.amazon.com/lex</a>
-				</section>
-				<section data-background="./img/ms_bot_framework.png" data-background-opacity="0.3">
-					<h1>Microsoft Bot Framework</h1>
-					<a href="https://dev.botframework.com/">https://dev.botframework.com/</a>					
-				</section>							
-				<section data-markdown="./markdowns/echo-bot-title.md">					
-				</section>
-				<section data-markdown="./markdowns/echo-bot-code.md">
-				</section>
-				<section>
-					<h1>Demo</h1>
-				</section>
-				<section data-background-video="./img/echo-bot-demo.mp4">					
-				</section>
-				<section>
-					<h2>Bot Framework Emulator</h2>
-					<a href="https://github.com/Microsoft/BotFramework-Emulator">https://github.com/Microsoft/BotFramework-Emulator</a>
-					<img src="./img/emulator.PNG" style="border: 0px; width: 1000px;">
-				</section>
-				<section><h2>How to separate bot logic from server?</h2></section>
-				<section>					
-					<h2>Activity Handler Class</h2>
-					<a href="https://docs.microsoft.com/en-us/javascript/api/botbuilder-core/activityhandler?view=botbuilder-ts-latest">Documentation</a><br><br>
-					<table style="font-size: 36px;">
-						<tr><td><b>Methods</b></td><td></td></tr>
-						<tr><td>onDialog(BotHandler)</td><td>onReactionsAdded(BotHandler)</td></tr>
-						<tr><td>onMembersAdded(BotHandler)</td><td>onReactionsRemoved(BotHandler)</td></tr>
-						<tr><td>onMembersRemoved(BotHandler)</td><td>onTurn(BotHandler)</td></tr>
-						<tr><td>onMessage(BotHandler)</td><td>run(TurnContext)</td></tr>						
-					</table> 	
-				</section>
-				<section data-markdown="./markdowns/advanced-bot-code.md"></section>
-				<section data-markdown="./markdowns/advanced-bot-code-server.md"></section>
-				<section><h2>How to gather data from user?</h2></section>
-				<section>					
-					<section>
-						<h1>Dialog library</h1>
-						<a href="https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-dialog?view=azure-bot-service-4.0">Documentation</a>
-					</section>				
-					<!--<section>
-						<h2>Waterfall Dialog</h2>
-						<img src="./img/waterfall.png" style="border: 0px; width: 600px">					
-					</section>-->				
-				</section>
-				<section><h2>Let's go</h2><h1 style="font-size: 450px;">BIG</h1></section>
-				<section>					
-					<section data-background="./img/luis.png" data-background-opacity="0.4">
-						<h1>LUIS</h1>						
-						<a href="https://luis.ai/">https://luis.ai/</a>
-						<aside class="notes">
-							* Language Understanding (LUIS) is a cloud-based API service that applies custom machine-learning intelligence to a user's conversational, natural language text to predict overall meaning, and pull out relevant, detailed information.
-						</aside>
-					</section>
-					<section data-markdown="./markdowns/luis.md"></section>
-					<section data-markdown="./markdowns/luis-code.md"></section>
-					<section>
-						<h1>Demo</h1>
-					</section>
-					<section data-background-video="./img/luis-WRO-JFK.mp4">						
-					</section>
-					<section data-markdown="./markdowns/luis-WRO-JFK-response.md"></section>
-					<section data-background-video="./img/luis-LHR-SYD.mp4">						
-					</section>					
-					<section data-markdown="./markdowns/luis-LHR-SYD-response.md"></section>				
-					<section data-markdown="./markdowns/luis-limitations.md"></section>
-					<section>
-						<h2>What more we can do for our bot?</h2>
-					</section>
-					<section data-background="./img/qna_maker.png" data-background-opacity="0.6">					
-						<h1>QnA Maker</h1>
-						<a href="https://www.qnamaker.ai/" style="font-size: 64px;">https://www.qnamaker.ai/</a>
-					</section>
-					<section data-markdown="./markdowns/qnamaker.md"></section>
-					<!--<section data-markdown="./markdowns/qna-chit-chat.md"></section>-->
-					<section data-markdown="./markdowns/qna-code.md"></section>
-					<section>
-						<h1>Demo</h1>
-					</section>
-					<section section data-background-video="./img/qna-flybot.mp4">						
-					</section>
-					<section data-markdown="./markdowns/qna-response.md"></section>
-					<section data-markdown="./markdowns/qna-limitations.md"></section>									
-				</section>
-				<section data-background="./img/demotime.gif">
-					<h1>Demo Time</h1>
-				</section>
-				<section data-background-video="./img/flybot-2.0.mp4" data-background-opacity="0.6">						
-					<h1>FlyBot</h1>
-				</section>
-				<section data-markdown="./markdowns/demo_final.md" style="text-align: left;"></section>
-				<section>						
-					<h2>Bot Channel Registration</h2>
-					<img src="./img/channels.jpg" style="width: 1000px;">
-				</section>
-				<section>
-					<h2>Bot Channel Registration</h2>
-					<h4>Community Support</h4>
-					<img src="./img/whatsapp.png" style="border: 0px; width: 500px;">
-				</section>
-				<section>
-					<img src="./img/msuska.png" style="border: 0px solid black"></img>
-				</section>					
-			</div>
-		</div>
+		<!-- home -->
+			<section id="home" class="main style1 dark fullscreen">
+				<div class="content">
+					<header>
+						<h2>Witamy.</h2>
+					</header>
+					<p>Szukasz wykonawcy, który stworzy kuchnię Twoich marzeń? Zaprojektuje i zbuduje przestronną i funkcjonalną garderobę? A może masz pomysł, którego nikt inny nie chce się podjąć? Dobrze trafiłeś...</p>
+					<footer>
+						<a href="#one" class="button style2 down">More</a>
+					</footer>
+				</div>
+			</section>
 
-		<script src="js/reveal.js"></script>
+		<!-- One -->
+			<section id="one" class="main style2 right dark fullscreen">
+				<div class="content box style2">
+					<header>
+						<h2>Kim jesteśmy?</h2>
+					</header>
+					<p>Jesteśmy specjalistami w swoim fachu, którzy nie tylko nadążają za najnowszymi trendami, ale także je wyznaczają. Jesteśmy w stanie tego dokonać, ponieważ pracujemy z najlepszymi projektantami, topowymi producentami z Polski i Europy oraz zaufanymi podwykonawcami. Stawiamy na jakość i dokładność, a osiągamy to poprzez wciąż unowocześniany park maszyn.</p>
+				</div>
+				<a href="#two" class="button style2 down anchored">Next</a>
+			</section>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				hash: true,
-				width: "100%",
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/highlight/highlight.js' },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
-		</script>
+		<!-- Two -->
+			<section id="two" class="main style2 left dark fullscreen">
+				<div class="content box style2">
+					<header>
+						<h2>Oferta</h2>
+					</header>
+					<p>Zrealizujemy każdą Twoją wizję i marzenie związane z zabudową wnętrz. Wykonamy dla Ciebie funkcjonalne meble kuchenne, przestronne garderoby, szafy wnękowe i wolnostojące. A może potrzebujesz mebli łazienkowych lub jedynej w swoim rodzaju komody, która zachwyci Twoich znajomych i przyjaciół? Każde z tych zleceń zrealizujemy z największą starannością, bo chcemy, aby wszystkie nasze produkty cieszyły Twoje oczy przez wiele lat.</p>
+				</div>
+				<a href="#work" class="button style2 down anchored">Next</a>
+			</section>
+
+		<!-- Work -->
+			<section id="work" class="main style3 primary">
+				<div class="content">
+					<header>
+						<h2>Nasze realizacje.</h2>
+						<p>Nasze najnowsze realizacje znajdziesz na portalach społecznościowych <a href="https://instagram.com">Instagram</a> oraz <a href="https://facebook.com">Facebook</a></p>
+						<a href="https://instagram.com"><i class="fab fa-instagram" style="color: black; font-size:40px"></a></i>&nbsp;&nbsp;&nbsp;<a href="https://facebook.com"><i class="fab fa-facebook" style="color: black; font-size:40px"></a></i>
+					</header>
+
+					<!-- Gallery  -->
+						<div class="gallery">
+							<article class="from-left">
+								<a href="images/fulls/01.jpg" class="image fit"><img src="images/thumbs/01.jpg" title=" " alt="" /></a>
+							</article>
+							<article class="from-right">
+								<a href="images/fulls/02.jpg" class="image fit"><img src="images/thumbs/02.jpg" title=" " alt="" /></a>
+							</article>
+							<article class="from-left">
+								<a href="images/fulls/03.jpg" class="image fit"><img src="images/thumbs/03.jpg" title=" " alt="" /></a>
+							</article>
+							<article class="from-right">
+								<a href="images/fulls/04.jpg" class="image fit"><img src="images/thumbs/04.jpg" title=" " alt="" /></a>
+							</article>
+							<article class="from-left">
+								<a href="images/fulls/05.jpg" class="image fit"><img src="images/thumbs/05.jpg" title=" " alt="" /></a>
+							</article>
+							<article class="from-right">
+								<a href="images/fulls/06.jpg" class="image fit"><img src="images/thumbs/06.jpg" title=" " alt="" /></a>
+							</article>
+						</div>
+
+				</div>
+				<a href="#contact" class="button style2 down anchored">Next</a>
+			</section>
+
+		<!-- Contact -->
+			<section id="contact" class="main style3 secondary">
+				<div class="content">
+					<header>
+						<h2>Masz pytania?</h2>
+						<p>Skontaktuj się z nami. Chętnie na wszystkie odpowiemy.</p>						
+						<p>
+							<b>P.W.DRYX Sebastian Dryka</b><br>
+							ul. Wielkopolska 41<br>
+							63-435 Cieszyn<br>
+							<br>
+							<i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;&nbsp;505 539 580<br>
+							<i class="fas fa-envelope"></i>&nbsp;dryx6@o2.pl<br>
+						</p>		
+					</header>
+					<br>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+
+				<!-- Icons -->
+					<ul class="icons">				
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+					</ul>
+
+				<!-- Menu -->
+					<ul class="menu">
+						<li>&copy; Dryx - Sebastian Dryka</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
 	</body>
 </html>
