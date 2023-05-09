@@ -1,0 +1,50 @@
+.container {    
+    display: grid;    
+    grid-template-columns: 1fr 1fr;    
+    column-gap: 30px;
+}
+
+.avatar {
+    display: flex;
+    grid-column: 1;
+    grid-row: 1;
+    width: 350px;
+    justify-self: end;
+}
+
+.name {    
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.social_media {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+}
+
+.social_media img {    
+    height: 25px;
+    padding-right: 10px;
+}
+
+.fit_text {
+    font-size: 140px;        
+    color: #eee;
+    font-family: "Montserrat", Impact, sans-serif;
+    font-weight: normal;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    text-transform: none;
+    text-shadow: none;
+    word-wrap: break-word;
+}
+
+.div_fragment_with_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+}

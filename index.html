@@ -1,242 +1,292 @@
 <!doctype html>
-<!doctype html>
 <html>
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>chatbot.js - Creating Virtual Assistants in JavaScript - JS Poland 2020</title>
+		<title>New Kids on the Block(chain) - Infoshare conference</title>
 
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/league.css">
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/night.css" id="theme">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/monokai.css">
-
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="./css/styles.css">
+				
 	</head>
-	<body>
+	<body>		
 		<div>
-            <img style="position: absolute; right: 50px; top: 30px; z-index: 100" src="./img/js-poland-logo.png"/>
-        </div>  
+            <img style="position: absolute; left: 50px; top: 30px; width: 50px; z-index: 100" src="./img/logo.png"/>
+        </div>
 		<div class="reveal">
 			<div class="slides">
-				<section>					
-					<section data-background="./img/first-page.png" data-background-size="1350px"></section>
-				</section>													
-				<section>
-					<section id="fragment_history">
-						<h1>History of chatbots</h1>					
-						<img src="./img/history_of_chatbots.jpeg">		
-					</section>
-					<section data-markdown 
-						data-separator="^\n\n\n"
-						data-separator-vertical="^\n\n"
-						data-separator-notes="^Note:"> 				
-						<textarea data-template>
-							## What is chatbot?
-							
-							> A computer program designed to simulate conversation with human users, especially over the Internet.
+				<section data-background-image="./img/nkotb2.png" data-background-opacity="0.25" data-background-size="cover" data-markdown>
+					### New Kids on the
+					# Block(chain)
+					<h6>Infoshare Conference, May 24-25, 2023</h6>
+				</section>
+				<section data-markdown>					
+					> Everybody is talking about it, not many are doing it, and those that are, are doing it badly.
 
-							###### _Oxford Dictionary, 1990s_
+					Vincent Doueizel, Blockchain Expo in London	
+				</section>
+				<section data-background-image="./img/blockchain_background.png" data-markdown>					
+					# Blockchain
+				</section>
+				<section>
+					<div class="container">
+						<div class="avatar">
+							<img src="./img/avatar.png" />
+						</div>
+						<div class="name">
+							<h3>Mieczysław Suska</h3><br>
+							<div style="font-size: 20px; font-weight: bold;">MANAGING DELIVERY ARCHITECT AT CAPGEMINI</div><br>
+							<div style="font-size: 20px;">FATHER</div>
+							<div style="font-size: 20px;">TECHNOLOGY & CYCLING PASIONATE</div>
+							<div style="font-size: 20px;">CONFERENCE SPEAKER</div><br>
+							<div class="social_media"><img src="./img/twitter.png" />   msuskadev84</div>
+							<div class="social_media"><img src="./img/github.png" />   msuskadev</div>
+							<div class="social_media"><img src="./img/linkedin.png" />   Mieczysław Suska</div>
+							<div class="social_media"><img src="./img/instagram.png" />on_quiet_lanes</div>
+						</div>
+					</div>
+				</section>
+				<section data-markdown>					
+					### The future is
+					# distributed
+				</section>
+				<section>										
+					<section class="fit_text">Immutability</section>
+					<section class="fit_text">Transparency</section>
+					<section data-markdown># Security</section>
+					<section data-markdown># Efficiency</section>
+					<section data-markdown># Traceability</section>
+					<section data-markdown># Auditability</section>
+					<section data-markdown># Cost reduction</section>
+					<section data-markdown>
+						## Cost reduction
 
-							Note:
-							* tell about the orign date as interesing fact
-						</textarea>			
+						Transfering **850 000 ETH** (\~1,585,165,000.00 USD) 
+						costs **0.000273 ETH** (\~0.5 USD) 		
 					</section>
-					<section id="fragment_history">
-						<h2>Eliza - 1966</h2>					
-						<img src="./img/eliza.jpg" style="border: 0px;"><br>
-						<a href="https://www.eclecticenergies.com/ego/eliza">https://www.eclecticenergies.com/ego/eliza</a>						
+					<section data-markdown>
+						## Cost reduction
+
+						According to a survey of eight banks by Accenture Consulting, the potential savings on a cost base of **$30 billion** are more than **$8 billion**. 		
 					</section>
-					<section id="fragment_history">
-						<h2>Dr. Sbaitso - 1992</h2>					
-						<img src="./img/db_sbaisto.png" style="border: 0px; width: 800px"><br>												
-					</section>
-					<section id="fragment_history">
-						<h2>Eugene Goostman - 2001</h2>					
-						<img src="./img/eugene_goostman.jpg" style="border: 0px; width: 800px"><br>												
-					</section>
-					<section id="fragment_history">
-						<h2>Apple Siri - 2011</h2>					
-						<img src="./img/siri.jpg" style="border: 0px; width: 800px"><br>						
-					</section>
-					<section id="fragment_history">
-						<h2>Amazon Alexa - 2015</h2>					
-						<img src="./img/alexa.png" style="border: 0px; width: 800px"><br>												
-					</section>
-					<section id="fragment_history">
-						<h2>Facebook Messenger as a platform for bots - 2016</h2>					
-						<img src="./img/messanger-logo.png" style="border: 0px; width: 450px"><br>																	
-					</section>
-					<section data-background="./img/messanger-logo.png" data-background-size="400px" data-background-opacity="0.4">
-						<h1>300 000 active bots on Messenger</h1>					
-						<p style="text-align: right;"><h5>Facebook F8 2018 Conference<h5></p>
-					</section>
-					<section id="fragment_history">
-						<h1>Google Meena - 2020</h1>
-						<p style="text-align: right;"><h5>Conversational Agent that Can Chat About…Anything</h5></p>						
-					</section>
-				</section>				
-				<section>
-					<section id="fragment_market_size">
-						<h3>Chatbot market size - 2019</h3>
-						<h1>US $2.6 billion</h1>
-						<h6><a href="https://www.businessinsider.com/chatbot-market-stats-trends">https://www.businessinsider.com/chatbot-market-stats-trends</a></h6>
-					</section>
-					<section id="fragment_market_size">
-						<h3>Chatbot market size - 2024</h3>
-						<h1>US $9.4 billion</h1>
-						<h6><a href="https://www.businessinsider.com/chatbot-market-stats-trends">https://www.businessinsider.com/chatbot-market-stats-trends</a></h6>
-					</section>
-				</section>
-				<section data-background="./img/rasa.png" data-background-opacity="0.3">
-					<h1>rasa</h1>
-					<a href="https://rasa.com/">https://rasa.com/</a>
-					<aside class="notes">
-						Rasa Open Source is a machine learning framework to automate text- and voice-based assistants.
-					</aside>
-				</section>
-				<section data-background="./img/dialogflow.png" data-background-opacity="0.3">
-					<h1>Google Dialogflow</h1>
-					<a href="https://dialogflow.com/">https://dialogflow.com/</a>
-				</section>
-				<section data-background="./img/watson.png" data-background-opacity="0.3">
-					<h1>IBM Watson</h1>
-					<a href="https://www.ibm.com/watson/how-to-build-a-chatbot">https://www.ibm.com/watson/how-to-build-a-chatbot</a>
-				</section>
-				<section data-background="./img/amazonlex.png" data-background-opacity="0.3">
-					<h1>Amazon LEX</h1>
-					<a href="https://aws.amazon.com/lex">https://aws.amazon.com/lex</a>
-				</section>
-				<section data-background="./img/ms_bot_framework.png" data-background-opacity="0.3">
-					<h1>Microsoft Bot Framework</h1>
-					<a href="https://dev.botframework.com/">https://dev.botframework.com/</a>					
-				</section>							
-				<section data-markdown="./markdowns/echo-bot-title.md">					
-				</section>
-				<section data-markdown="./markdowns/echo-bot-code.md">
+					<section data-markdown># Censorship</section>
 				</section>
 				<section>
-					<h1>Demo</h1>
+					<img src="./img/blockchain_usecases.png" style="scale: 120%;" />
 				</section>
-				<section data-background-video="./img/echo-bot-demo.mp4">					
+				<section data-markdown>
+					By the end of 2018, about 
+					# 90% 
+					of U.S. and European banks and financial institutions had begun exploring the adoption of blockchain technology.
+				</section>
+				<section data-markdown>
+					According to Reuters, some of the world’s largest banks are investing about 
+					# $50 billion 
+					to build a blockchain-based digital cash settlement system.
 				</section>
 				<section>
-					<h2>Bot Framework Emulator</h2>
-					<a href="https://github.com/Microsoft/BotFramework-Emulator">https://github.com/Microsoft/BotFramework-Emulator</a>
-					<img src="./img/emulator.PNG" style="border: 0px; width: 1000px;">
+					<img src="./img/ibm.png" style="scale: 80%" />
+					<br>
+					About <b>500</b> projects, avarage investment in blockchain projects is <b>$1 million</b>. 
 				</section>
-				<section><h2>How to separate bot logic from server?</h2></section>
-				<section>					
-					<h2>Activity Handler Class</h2>
-					<a href="https://docs.microsoft.com/en-us/javascript/api/botbuilder-core/activityhandler?view=botbuilder-ts-latest">Documentation</a><br><br>
-					<table style="font-size: 36px;">
-						<tr><td><b>Methods</b></td><td></td></tr>
-						<tr><td>onDialog(BotHandler)</td><td>onReactionsAdded(BotHandler)</td></tr>
-						<tr><td>onMembersAdded(BotHandler)</td><td>onReactionsRemoved(BotHandler)</td></tr>
-						<tr><td>onMembersRemoved(BotHandler)</td><td>onTurn(BotHandler)</td></tr>
-						<tr><td>onMessage(BotHandler)</td><td>run(TurnContext)</td></tr>						
-					</table> 	
+				<section>
+					<img src="./img/wallmart_and_others.png" style="scale: 120%" />
+					<br><br>					
+					Partnership to implement blockchain in the food industry. Their goal is to generate <b>$700 million</b> in increased productivity.
 				</section>
-				<section data-markdown="./markdowns/advanced-bot-code.md"></section>
-				<section data-markdown="./markdowns/advanced-bot-code-server.md"></section>
-				<section><h2>How to gather data from user?</h2></section>
-				<section>					
+				<section>
+					<img src="./img/RG-Logo-Gold.png" style="scale: 100%" />
+					<br>					
+					Richline Group uses DLT to track the origin of jewelry to ensure that the mining of precision goods is done <b>ethically</b>. 
+				</section>
+				<section>
+					<img src="./img/ford.png" style="scale: 60%" />										
+					Ford has used IBM platforms to ensure the ethical sourcing of <b>Cobalt</b>, in an attempt to curtail abusive labor practices.
+				</section>
+				<section>
 					<section>
-						<h1>Dialog library</h1>
-						<a href="https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-dialog?view=azure-bot-service-4.0">Documentation</a>
-					</section>				
+						<img src="./img/dragonchain-logo.png" style="scale: 100%" />
+						<br>
+						Dragonchain is a blockchain-as-a-service solution designed to help Enterprises deploy private blockchain platforms
+					</section>
 					<section>
-						<h2>Waterfall Dialog</h2>
-						<img src="./img/waterfall.png" style="border: 0px; width: 600px">					
+						<img src="./img/walt_disney_logo.png" style="scale: 100%" />										
 					</section>
 				</section>
-				<section><h2>Let's go</h2><h1 style="font-size: 450px;">BIG</h1></section>
-				<section>					
-					<section data-background="./img/luis.png" data-background-opacity="0.4">
-						<h1>LUIS</h1>						
-						<a href="https://luis.ai/">https://luis.ai/</a>
-						<aside class="notes">
-							* Language Understanding (LUIS) is a cloud-based API service that applies custom machine-learning intelligence to a user's conversational, natural language text to predict overall meaning, and pull out relevant, detailed information.
-						</aside>
+				<section>
+					<section data-markdown>
+						# CBDC
+						### Central Bank Digital Currency
 					</section>
-					<section data-markdown="./markdowns/luis.md"></section>
-					<section data-markdown="./markdowns/luis-code.md"></section>
 					<section>
-						<h1>Demo</h1>
+						<img src="./img/cbdc_map.PNG" style="scale: 120%" />
+						<br><br>
+						https://www.atlanticcouncil.org/cbdctracker/
 					</section>
-					<section data-background-video="./img/luis-WRO-JFK.mp4">						
+				</section>
+				<section data-markdown>
+					Blockchain can help in many domains, but **_the technology must still improve in some areas_**
+				</section>
+				<section>
+					<section data-markdown>
+						### Transaction speed and verification process
 					</section>
-					<section data-markdown="./markdowns/luis-WRO-JFK-response.md"></section>
-					<section data-background-video="./img/luis-LHR-SYD.mp4">						
+					<section data-background-image="./img/bitcoin_logo.png" data-background-size="30%" data-background-opacity="15%" data-markdown>						
+						# 7
+						###### transactions per second
+					</section>
+					<section data-background-image="./img/ethereum_logo.png" data-background-size="20%" data-background-opacity="25%" data-markdown>						
+						# 15
+						###### transactions per second
+					</section>
+					<section data-background-image="./img/visa_logo.png" data-background-size="40%" data-background-opacity="25%" data-markdown>						
+						## 40,000 - 50,000
+						###### transactions per second
+					</section>
+					<section data-background-image="./img/ibm.png" data-background-size="40%" data-background-opacity="10%" data-markdown>						
+						## 100,000
+						###### transactions per second
+						###### (12 billion a day)
 					</section>					
-					<section data-markdown="./markdowns/luis-LHR-SYD-response.md"></section>				
-					<section data-markdown="./markdowns/luis-limitations.md"></section>
-					<section>
-						<h2>What more we can do for our bot?</h2>
-					</section>
-					<section data-background="./img/qna_maker.png" data-background-opacity="0.6">					
-						<h1>QnA Maker</h1>
-						<a href="https://www.qnamaker.ai/" style="font-size: 64px;">https://www.qnamaker.ai/</a>
-					</section>
-					<section data-markdown="./markdowns/qnamaker.md"></section>
-					<section data-markdown="./markdowns/qna-chit-chat.md"></section>
-					<section data-markdown="./markdowns/qna-code.md"></section>
-					<section>
-						<h1>Demo</h1>
-					</section>
-					<section section data-background-video="./img/qna-flybot.mp4">						
-					</section>
-					<section data-markdown="./markdowns/qna-response.md"></section>
-					<section data-markdown="./markdowns/qna-limitations.md"></section>									
 				</section>
-				<section data-background="./img/demotime.gif">
-					<h1>Demo Time</h1>
-				</section>
-				<section data-background-video="./img/flybot-2.0.mp4" data-background-opacity="0.6">						
-					<h1>FlyBot</h1>
-				</section>
-				<section data-markdown="./markdowns/demo_final.md" style="text-align: left;"></section>
-				<section>						
-					<h2>Bot Channel Registration</h2>
-					<img src="./img/channels.jpg" style="width: 1000px;">
+				<section data-markdown>
+					### Data protection and regulations
 				</section>
 				<section>
-					<h2>Bot Channel Registration</h2>
-					<h4>Community Support</h4>
-					<img src="./img/whatsapp.png" style="border: 0px; width: 500px;">
+					<section>
+						<h3>Large energy consumption</h3>						
+					</section>
+					<section data-background-image="./img/energy_consumption.png" data-background-size="50%">						
+					</section>
+				</section>
+				<section data-markdown>
+					### Interoperability
+				</section>
+				<section data-markdown>
+					### Integration with legacy systems
+				</section>
+				<section data-markdown>
+					### Lack of talents
+				</section>
+				<section data-background-image="./img/internet_in_90s.jpg" data-background-size="80%" data-background-opacity="20%" data-markdown>
+					# Late 90's
+				</section>
+				<section data-markdown>
+					### How to learn
+					# Blockchain?
 				</section>
 				<section>
-					<img src="./img/msuska.png" style="border: 0px solid black"></img>
-				</section>					
+					<section data-markdown>
+						## Concept of Blockchain
+					</section>
+					<section>					
+						<h3>How does it work?</h3>
+						<br>
+						<img src="./img/how_blockchain_works.png" style="scale:140%"/>
+					</section>
+					<section>
+						<h3>Hashing</h3>
+						<br>
+						<img src="./img/hashing.png" style="scale:100%"/>
+					</section>
+					<section>
+						<h3>Merkle tree</h3>
+						<img src="./img/merkle_tree.png" style="scale:85%; position: relative; top: -50px"/>
+					</section>
+					<section>
+						<h3>The block</h3>
+						<br>
+						<img src="./img/blocks.png" style="scale:130%"/>
+					</section>
+					<section>
+						<h3>The chain of blocks</h3>						
+						<img src="./img/chain_of_blocks.png" style="scale:100%"/>
+					</section>
+					<section>
+						<h3>Consensus mechanisms</h3>						
+						<img src="./img/consensus.png" style="scale:100%"/>
+					</section>
+					<section>
+						<h3>Type of Blockchain</h3>						
+						<img src="./img/blockchain_types.png" style="scale:100%"/>
+					</section>
+				</section>
+				<section>
+					<section data-markdown>
+						## Blockchain tools and platforms
+					</section>
+					<section data-markdown data-background-image="./img/ethereum_logo.png" data-background-size="20%" data-background-opacity="45%">
+						## ETHEREUM
+						#### ethereum.org
+					</section>
+					<section>
+						<h4>Distributed applications (dApps)</h4>						
+						<img src="./img/dapps.png" style="scale:80%; position: relative; top: -80px"/>
+					</section>
+					<section>
+						<h3>Smart contracts</h3>						
+						<br>
+						<img src="./img/smart_contract.png" />
+					</section>
+					<section>
+						<h3>Smart contracts</h3>												
+						<img src="./img/smart_contract_example.png" style="scale:100%; position: relative; top: -80px"/>
+					</section>
+					<section>
+						<img src="./img/solidity_logo.png" style="scale:100%;"/>
+						<h5>soliditylang.org</h5>
+					</section>
+					<section>
+						<h3>What is Gas?</h3>												
+						<img src="./img/gas-station.png" style="scale:70%;"/>
+					</section>
+					<section>						
+						<h3>Truffle Suite</h3>
+						<img src="./img/truffle_suite.png" style="scale:90%;"/>						
+						<h5>trufflesuite.com</h5>
+					</section>
+					<section>						
+						<h3>Hardhat</h3>
+						<img src="./img/hardhat.png" style="scale:90%;"/>						
+						<h5>hardhat.org</h5>
+					</section>					
+				</section>
+				<section>					
+					<img src="./img/corda.jpg" style="scale:90%;"/>						
+					<h5>corda.net</h5>
+				</section>
+				<section>					
+					<img src="./img/hyperledger.png" style="scale:80%;"/>					
+					<h5>cn.hyperledger.org</h5>
+				</section>
+				<section>														
+					<img src="./img/avalanche.svg" style="scale:90%;"/>						
+					<h5>avax.network</h5>
+				</section>
 			</div>
 		</div>
 
-		<script src="js/reveal.js"></script>
-
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		
 		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({				
 				hash: true,
-				width: "100%",
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/highlight/highlight.js' },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],				
+			});			
 		</script>
 	</body>
 </html>
