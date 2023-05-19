@@ -48,3 +48,13 @@
     align-items: center;
     column-gap: 30px;
 }
+
+.div_blocks {
+    display: flex;        
+    column-gap: 80px;
+}
+
+.div_blocks p img {
+    display: flex;    
+    scale: 150%;
+}
