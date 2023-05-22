@@ -27,7 +27,7 @@
 					<h6>Infoshare Conference, May 24-25, 2023</h6>
 
 					Note:
-					* pytanie					
+					* pytanie - czy znacie zespol NKOTB?			
 					* najpopularniejsza piosenka
 					* analogia
 				</section>
@@ -92,7 +92,7 @@
 					</section>
 					<section class="fit_text">Transparency
 						<aside class="notes">
-							* "PRZEJRZYSTOSC DANYCH"
+							* "PRZEJRZYSTOSC DANYCH"<br>
 							* Kazdy user widzi to samo<br>
 							* pelnia praw<br>
 							* broadcasting<br>							
@@ -116,7 +116,7 @@
 					* "MOZLIWOSC SLEDZENIA"
 					* sledzenie danych od poczatku istnienia sieci					
 					</section>
-					<section data-markdown>
+					<!--<section data-markdown>
 					# Auditability
 
 					Note:
@@ -124,7 +124,7 @@
 					* czasochlonny i kosztowny proces
 					* laczenie po timestamp, id czy correlationid
 					* w blockchain - sledzenie od danego momentu w czasie
-					</section>
+					</section>-->
 					<section data-markdown>
 					# Efficiency
 
@@ -176,25 +176,25 @@
 					# 90% 
 					of U.S. and European banks and financial institutions had begun exploring the adoption of blockchain technology.
 				</section>
-				<section data-markdown>
+				<!--<section data-markdown>
 					According to Reuters, some of the world’s largest banks are investing about 
 					# $50 billion 
 					to build a blockchain-based digital cash settlement system.
 
 					Note:
 					* cyfrowe rosliczenia gotowkowe
-				</section>
+				</section>-->
 				<section>
 					<img src="./img/ibm.png" style="scale: 80%" />
 					<br>
 					About <b>500</b> projects, average investment in blockchain projects is <b>$1 million</b>. 
 				</section>
-				<section>
+				<!--<section>
 					<img src="./img/wallmart_and_others.png" style="scale: 120%" />
 					<br><br>					
 					Partnership to implement blockchain in the food industry. Their goal is to generate <b>$700 million</b> in increased productivity.
 				</section>
-				<!--<section>
+				<section>
 					<img src="./img/RG-Logo-Gold.png" style="scale: 100%" />
 					<br>					
 					Richline Group uses DLT to track the origin of jewelry to ensure that the mining of precision goods is done <b>ethically</b>. 
@@ -203,6 +203,7 @@
 					<img src="./img/ford.png" style="scale: 60%" />										
 					Ford has used IBM platforms to ensure the ethical sourcing of <b>Cobalt</b>, in an attempt to curtail abusive labor practices.
 					<aside class="notes">
+						* branza automotive
 						* proba ograniczenia nieuczciwych praktyk<br>
 						* poszanowanie praw pracownych<br>																	
 					</aside>
@@ -223,6 +224,7 @@
 						### Central Bank Digital Currency
 
 						Note:
+						* nic innego jak wirtualna waluta
 						* ma byc pelnoprawnym srodkiem platnicznym
 						* transakcje detaliczne i miedzybankowe
 						* potrzeba integracji dla bankow, sklepow internetowych i stron
@@ -271,8 +273,16 @@
 					<section data-background-image="./img/bitcoin_logo.png" data-background-size="30%" data-background-opacity="15%" data-markdown>						
 						# 7
 						###### transactions per second
+
+						Note:
+						* skrajne przypadki
+						* zalezy wybranego algorytmu konsensusu
+						* w sieciach prowatnych wygladato o wiele lepiej
+						* Hyperledger 5k-10k transakcji
+						* platformy ktore pzezywszaja VISE
+						* ale im wiecej nodow w sieci tym wydajnosc bardziej spada
 					</section>
-					<section data-background-image="./img/ethereum_logo.png" data-background-size="20%" data-background-opacity="25%" data-markdown>						
+					<!--<section data-background-image="./img/ethereum_logo.png" data-background-size="20%" data-background-opacity="25%" data-markdown>						
 						# 15
 						###### transactions per second
 
@@ -283,7 +293,7 @@
 						* Hyperledger 5k-10k transakcji
 						* platformy ktore pzezywszaja VISE
 						* ale im wiecej nodow w sieci tym wydajnosc bardziej spada
-					</section>					
+					</section>-->					
 				</section>
 				<section data-markdown>
 					### Data protection and regulations
@@ -297,7 +307,7 @@
 					* DB z danymi wprowadza centralizacje
 					* cheet sheets
 				</section>
-				<section>
+				<!--<section>
 					<section>
 						<h3>Large energy consumption</h3>
 						<aside class="notes">
@@ -311,15 +321,15 @@
 					</section>
 					<section data-background-image="./img/energy_consumption.png" data-background-size="50%">						
 						<aside class="notes">
-							* Ekstremum
-							* Zuzycie prady tyle do Kazachstan
-							* slad weglowy Singapur
-							* 1 transakcja - 60k h youtube lub 800k transakcji Visa
-							* miesiac okres zimowym 
-							* okres letni kwartal 
+							* Ekstremum<br>
+							* Zuzycie prady tyle do Kazachstan<br>
+							* slad weglowy Singapur<br>
+							* 1 transakcja - 60k h youtube lub 800k transakcji Visa<br>
+							* miesiac okres zimowym <br>
+							* okres letni kwartal <br>
 						</aside>
 					</section>
-				</section>
+				</section>-->
 				<section data-markdown>
 					### Interoperability
 
@@ -367,47 +377,120 @@
 
 					Note:
 					* skoro idealny moment, to warto zadac pytanie
+					* jak uczyc sie blockchaina
 				</section>
 				<section>
 					<section data-markdown>
 						## Concept of Blockchain
+
+						Note:
+						* koncept i skladowe ktore sz a tego typu syemach zaszyte
 					</section>
 					<section>					
 						<h3>How does it work?</h3>
 						<br>
 						<img src="./img/how_blockchain_works_1.png" style="scale:140%"/>
+						<aside class="notes">
+							* wszystko zaczyna sie od transakcji<br>
+							* atomowa - wszystkie operacje albo zadna<br>
+							* niezalezne - brak interakcji, nie zaleza od zadnej<br>
+							* weryfikowalne<br>
+							* niezmiennie, nie ulegaja zniszczeniu<br>
+							* peer-2-peer<br>
+							* nody - maja dokladna kopie istniejacych danych<br>
+							* walidacja - poprawnosc danych oraz zbior regul<br>
+							* opakowanie w blok w zaleznosci od sieci co 12 sek powstaje block w ETH, bitcoin co 10 minut<br>
+							* broadcasting<br>
+						</aside>
 					</section>
 					<section>
 						<h3>Hashing</h3>
 						<br>
 						<img src="./img/hashing.png" style="scale:100%"/>
+						<aside class="notes">
+							* kilka pojec ktore trzeba znac i rozumiec
+							* SHA-256 (Secure hash Algotirhm - 256 bitow, 64 znaki)<br>
+							* wykonywanie funkcji matematycznych - rezultat ciag znakow o stalej dlugosci<br>
+							* funkcje jedno kierunkowe<br>
+						</aside>
 					</section>
 					<section>
 						<h3>Merkle tree</h3>
 						<img src="./img/merkle_tree.png" style="scale:85%; position: relative; top: -50px"/>
+						<aside class="notes">
+							* kolejny mechanism, pomaga w werfikacji manipulacji<br>
+							* Drzewo skrotow, H-Drzewo, drzewo hashy<br>
+							* najnoszy poziom to liscie - leaf nodes<br>
+							* srodkowy poziom to nodes - wezly<br>
+							* korzen - root<br>	
+						</aside>
 					</section>
 					<section>
 						<h3>The block</h3>
 						<br>
 						<div class="div_blocks">													
-							<p><img src="./img/block_part1.png" /></p>
-							<p class="fragment fade-right"><img src="./img/block_part2.png" /></p>
-							<p class="fragment fade-right"><img src="./img/block_part3.png" /></p>
-							<p class="fragment fade-right"><img src="./img/block_part4.png" /></p>							
+							<p>
+								<img src="./img/block_part1.png" />								
+							</p>
+							<p class="fragment fade-right">
+								<img src="./img/block_part2.png" />								
+							</p>
+							<p class="fragment fade-right">
+								<img src="./img/block_part3.png" />								
+							</p>
+							<p class="fragment fade-right">
+								<img src="./img/block_part4.png" />								
+							</p>							
 						</div>
+						<aside class="notes">
+							* struktura danych<br>
+							* jakas wiadomosc np. zbior transakcji oraz hash<br>
+							* block musi spelniac szereg regul - np. 4 zera na poczatku hasha<br>
+							* nonce - slownik pol-ang niezbyt pomocny - liczba jednokrotnego uzytku<br>
+							* nie mozna go przewidziec - trzeba probowac od poczatku czyli KOPAC<br>
+							* oczywiscie to nkopanie nie zawsze ma miejsce<br>						
+						</aside>
 					</section>					
 
 					<section>
 						<h3>The chain of blocks</h3>						
 						<img src="./img/chain_of_blocks_1.png" style="scale:100%"/>
+						<aside class="notes">
+							* nasze bloki sa ukladane z lancuchu blokow<br>
+							* jakie atrybuty<br>
+							* w zaleznosci od sieci locki zawieraja inne informacje<br>
+							* no ale jest jeden wspolny mianownik - nastepny blok ma info o poprzedim<br>
+						</aside>	
 					</section>
 					<section>
 						<h3>Consensus mechanisms</h3>						
 						<img src="./img/consensus.png" style="scale:100%"/>
+						<aside class="notes">
+							* oklejna skladowa systemow opartych o blockchain i DLT
+							* mechanizm pozwala na dodawanie blokow do blokchaina<br>
+							* PoW, PoS i PoA ajpopularniejsze<br>
+							* PoW - skrzynia z klodka z szyfrem, kto pierwszy odgadnie, ten ma zawartosc skrzyni <br>
+							* PoW jest w Bitcoin, Dogecoin, Litecoin<br>
+							* Bitcoin - 6 BTC i napiwki dodawane do transakcji zeby zachecic kpalnie do dodania transakcji do bloku<br>
+							* PoS - skrzynka i loteria<br>
+							* PoS W sieci ETH - walidator UDZIALY W 32 ETH, 250k zl, ranodomowo wybierani <br>
+							* dostaja koszt transakcji oraz napiwki<br>
+							* PoA - za weryfikacje dodanie bloku odpowiadaja zaufane nody, najczesciej w prywatnych blockcjainach	<br>						
+						</aside>
 					</section>
 					<section>
 						<h3>Type of Blockchain</h3>						
 						<img src="./img/blockchain_types.png" style="scale:100%"/>
+						<aside class="notes">
+							* jak juz mowimy o typach blockchainow<br>
+							* publiczny - kazdy za darmo moze dolaczyc do sieci, pelnia praw<br>
+							* idealny prylad zdecentralizowanej architektury<br>
+							* brak organu nadzorujacego<br>
+							* prywaty - jest jednostka kontrolujaca siec<br>
+							* decyduje o tym kto do sieci wejdzi i na jakich prawach<br>
+							* permissioned - mix obu<br>
+							* do sieci wchodzi kazdy kto pelni wymogi sieci<br>
+						</aside>
 					</section>
 				</section>
 				<section>
@@ -417,54 +500,122 @@
 					<section data-markdown data-background-image="./img/ethereum_logo.png" data-background-size="20%" data-background-opacity="45%">
 						## ETHEREUM
 						#### [https://ethereum.org](https://ethereum.org)
+
+						Note:
+						* najppularniejsza platforma
+						* najwieksze community
+						* wiele narzedzi i dodatkow do np. VS Code wspomagajacych tworzenie...
 					</section>					
 					<section>
 						<h3>Smart contracts</h3>						
 						<br>
 						<img src="./img/smart_contract.png" />
+						<aside class="notes">
+							* nic innego jak male programy zawierajaca jakas logike<br>
+							* przechowywane w blockchainie<br>
+							* moga wyslac walute Ether<br>
+							* podemowac decyzje<br>
+							* wywolywac inne smart kontrakty<br>
+							* kickstarter lub zrzutka
+							* czy mozna ufac? sa niezmienne, wynik dzialania jest walidowany przez uczestnikow sieci<br>
+						</aside>
 					</section>
 					<section>
 						<img src="./img/solidity_logo.png" style="scale:100%;"/>						
 						<h5><a href="https://soliditylang.org">https://soliditylang.org</a></h5>
+						<aside class="notes">
+							* powstal na potrzeby pisania smart kontraktow w sieci ETH<br>
+							* Javascript, C++, Python<br>
+						</aside>
 					</section>
 					<section>
 						<h3>Smart contracts</h3>												
 						<img src="./img/smart_contract_example.png" style="scale:100%; position: relative; top: -80px"/>
+						<aside class="notes">
+							* poprosilem chatGPT o wygenerowanie kodu smart kontrktu<br>
+							* mamy slowo kluczowe kontrakt,<br>
+							* adres owera tego kotraktu<br>
+							* waldatory<br>
+							* balans contraktu<br>
+							* i transfer do walletu ownera<br>
+						</aside>
 					</section>					
 					<section>
 						<h4>Distributed applications (dApps)</h4>						
 						<img src="./img/dapps.png" style="scale:70%; position: relative; top: -80px"/>
+						<aside class="notes">
+							* porownianie do tradycyjnych systemow<br>
+							* Czesto sie slyszy UI dla smart kontraktow <br>
+							* logika biznesowa to Smart kontrakty, baza to blockchain<br>
+							* dApps sa zero-downtime<br>
+							* sa rozproszeone czyli znajduja sie na wielu komputerach<br>							
+						</aside>
 					</section>
 					<section>
 						<h3>What is Gas?</h3>												
 						<img src="./img/gas-station.png" style="scale:70%;"/>
+						<aside class="notes">
+							* paliwo 
+							* dokumentacja ethereum i solidity<br>
+							* jednostka mierzaca ilosc mocy obliczeniowej danej operacji<br>
+							* dodawanie liczb to 3 gas, sprawdzanie salda portfela 400 gas, transfer 21000 gas<br>
+							* gas z gas price (GWEI 10-9 EHT) kasa dla walidatora<br>
+						</aside>
 					</section>
 					<section>						
 						<h3>Truffle Suite</h3>
 						<img src="./img/truffle_suite.png" style="scale:90%;"/>												
 						<h5><a href="https://trufflesuite.com">https://trufflesuite.com</a></h5>
+						<aside class="notes">
+							* jeden z pierwszych tooli
+							* kompilacja, debugowanie i deployment<br>  
+							* Genoche - testowanie i tworzenie lokalnie prywatngo Blockchaina<br>							
+						</aside>
 					</section>
 					<section>						
 						<h3>Hardhat</h3>
 						<img src="./img/hardhat.png" style="scale:90%;"/>						
 						<h5><a href="https://hardhat.org">https://hardhat.org</a></h5>
+						<aside class="notes">
+							* nowszy knkurent dla Truffle i Genoche<br>
+						</aside>
 					</section>
 					<section>					
 						<img src="./img/corda.jpg" style="scale:90%;"/>						
 						<h5><a href="https://corda.net">https://corda.net</a></h5>
+						<aside class="notes">
+							* system rozporoszony - nie oparty o Blockchain
+							* bardzo popularny w insyttucjach finansowych, 
+							* chwala sie ze sa zgodni ze wszystkimi regulacjami
+							* moj klient uzywa Cordy
+						</aside>
 					</section>
 					<section>					
 						<img src="./img/hyperledger.png" style="scale:80%;"/>					
 						<h5><a href="https://www.hyperledger.org">https://www.hyperledger.org</a></h5>
+						<aside class="notes">
+							* biblioteka 
+							* promowana przez IBM
+							* potrafi przetwarac 10k transakcji na sekunde
+							* klada nacisk na interoperability
+						</aside>
 					</section>
 					<section>														
 						<img src="./img/avalanche.svg" style="scale:90%;"/>											
 						<h5><a href="https://avax.network">https://avax.network</a></h5>
+						<aside class="notes">
+							* jedna z nowoczesniejszych blockchainowych platform<br>
+							* obsluguje smart kontrakty<br>
+							* kladzie ogromny nacisk na szybkosc transakcji dzieki ich featuowi subnet<br>
+						</aside>
 					</section>
 				</section>
 				<section>
 					<section data-markdown>
 						## Who should consider upskilling?
+
+						Note:
+						* REVOLUCJA BLOCKCHAINOWA dotyczy nie tylko						
 					</section>
 					<section>
 						<div class="container">
@@ -475,6 +626,9 @@
 								<h3>Developers and architects</h3>
 							</div>
 						</div>
+						<aside class="notes">
+							* oczywiste  - tutaj nie ma sie co rozwodzic na ten temat<br>							
+						</aside>
 					</section>
 					<section>
 						<div style="display: grid; justify-content: center;"><h3>Project<br>managers</h3>
@@ -483,6 +637,12 @@
 						<p style="font-size: 30px;">Lack of tools and expertise</p>	
 						<p style="font-size: 30px;">Hiring is difficult</p>	
 						<img src="./img/pm_female.png" style="scale:100%; position: absolute; left: -300px;"/><img src="./img/pm_male_1.png" style="scale:100%; position: absolute; right: -300px;"/></div>
+						<aside class="notes">
+							* nowe ryzyka, ktore trzeba zaadresowac i rozwiazac<br>
+							* kosztowne narzedzia lub ich brak - ujac w budzetowaniu<br>
+							* brak ekspertow<br>
+							* narzedzi PMIS (Project managmenet information systems) - czy nie przejsc na blockchain, wyplacenie faktur gdy wersja projektu lub mileson osianiety<br>
+						</aside>
 					</section>
 					<section>
 						<div style="display: grid; justify-content: center;"><h3>Testers</h3>
@@ -491,6 +651,12 @@
 						<p style="font-size: 30px;">Lack of expertise</p>						
 						<img src="./img/qa_male.png" style="scale:150%; position: absolute; left: -180px; bottom: -150px"/>
 						<img src="./img/qa_female_2.png" style="scale:150%; position: absolute; right: -140px;"/></div>
+						<aside class="notes">
+							* bardziej skomplikowane scenariusze testowe<br>
+							* portfele, broadcasting danych, gas w ETH<br>
+							* nowe narzedzia Genache, HArdhut, metamask<br>
+							* brak usstandaryzowanych podejsc<br>
+						</aside>
 					</section>
 					<section>
 						<div style="display: grid; justify-content: center;"><h3>Business<br>analysts</h3>
@@ -500,6 +666,12 @@
 							<p style="font-size: 30px;">Intervention tool</p>
 							<img src="./img/ba_female.png" style="scale:120%; position: absolute; left: -150px;"/>
 							<img src="./img/ba_male.png" style="scale:120%; position: absolute; right: -150px;"/></div>
+							<aside class="notes">
+								* natura systemow rozproszonych podczas pisania specyfikacji<br>
+								* raportowanie<br>
+								* regulacje i ich wplyw na nasz system<br>
+								* jak reagowac jak nie wszystko pojdzie tak jak powinno<br>
+							</aside>
 					</section>
 					<section>
 						<div class="container">
@@ -511,6 +683,12 @@
 								<p style="font-size: 30px;">Cloud infrastructure - BaaS</p>
 								<p style="font-size: 30px;">Virtual networks and network policies</p>
 								<p style="font-size: 30px;">Backup and restore - drain mode</p>
+								<aside class="notes">
+									* setup BaaS<br>
+									* wirtualne sieci miedzy partycypantami<br>
+									* backup and restore sieci<br>
+									* upgrade sieci - drain mode<br>
+								</aside>
 							</div>
 						</div>
 					</section>
@@ -520,6 +698,12 @@
 						<br><br><h3>New Kids<br>on the Block(chain)</h3>
 						<p style="font-size: 30px;">Thank you</p>
 					<img src="./img/nkotb_theme.png" style="scale:120%; position: absolute; left: -50px"/>					
+					<aside class="notes">
+						* mam nadzieje ze udalo mi sie osiagnac cel<br>
+						* pokazalem Wam ak krok po kroku wejsc w ten swiat<br>
+						* mam nadziej ze neidlugo spotkamy na jakiejs dedykowanej konferencji blockchainowej<br>
+						* jezeli ktos z wam bedzie mial jakies pytania badz chcial porozmawiac to jestem przy stoisku Capgemini<br>
+					</aside>
 				</section>		
 			</div>
 		</div>
